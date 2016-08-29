@@ -4,38 +4,38 @@
  - AuthForm
 
 **HomeContainer**
-  -FindFriendsButton
-  -UserIcon
-  -HeaderNavContainer
-  +HomePageNavContainer
+  - FindFriendsButton
+  - UserIcon
+  - HeaderNavContainer
+  + HomePageNavContainer
 
  **HomePageNavContainer**
-  -DashboardContainer
-    -TripsIndexItem(props = CurrentUser ID)
-    -RoutesIndexItem(props = CurrentUser ID)
-  -ActivityFeedContainer
-    -TripsIndexItem(props = ID's of the current user's friends)
-    +CommentsContainer
-    +CommentsFormContainer
-  -ProfileContainer
-  -FriendsIndexContainer
-    -FriendsIndexItem
+  - DashboardContainer
+    - TripsIndexItem(props = CurrentUser ID)
+    - RoutesIndexItem(props = CurrentUser ID)
+  - ActivityFeedContainer
+    - TripsIndexItem(props = ID's of the current user's friends)
+    + CommentsContainer
+    + CommentsFormContainer
+  - ProfileContainer
+  - FriendsIndexContainer
+    - FriendsIndexItem
 
 **FriendsSearch**
-  -FriendsResults
+  - FriendsResults
 
 **CreateRoutesFormContainer**
-  -Map
+  - Map
 
 **LogTripFormContainer**
-  -RoutesSearchContainer
-    -RoutesSearchResults
+  - RoutesSearchContainer
+    - RoutesSearchResults
 
 **RouteDetailContainer**
 
 **TripDetailContainer**
-  -CommentsFormContainer
-  -CommentsFormContainer
+  - CommentsFormContainer
+  - CommentsFormContainer
 
 ## Routes
 
