@@ -28,9 +28,9 @@ and sufficient CSS styling:
 * [Redux Structure][redux-structure]
 * [Sample State][sample-state]
 
-[wireframes]: /wireframes
-[components]: /component-hierarchy.md
-[redux-structure]: /redux-structure.md
-[sample-state]: /sample-state.md
-[api-endpoints]: /api-endpoints.md
-[schema]: /schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[redux-structure]: redux-structure.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
