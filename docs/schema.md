@@ -47,4 +47,5 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (References users), indexed
+trip_id     | integer   | not null, foreign key (References trips), indexed
 body        | string    | not null
