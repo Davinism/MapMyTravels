@@ -145,29 +145,29 @@
 ### Friends Search Cycle
 
 * `fetchFriendsSearch`
-0. invoked from `FriendSearchBar` `onChange` when there is text
-0. `GET /api/users` is called with `text` param.
-0. `receiveSearchedFriends` is set as the success callback.
+  0. invoked from `FriendSearchBar` `onChange` when there is text
+  0. `GET /api/users` is called with `text` param.
+  0. `receiveSearchedFriends` is set as the success callback.
 
 * `receiveSearchedFriends`
-0. invoked from an API callback.
-0. The `FriendsSuggestion` reducer updates `friendsSuggestions` in the application's state.
+  0. invoked from an API callback.
+  0. The `FriendsSuggestion` reducer updates `friendsSuggestions` in the application's state.
 
 * `removeFriendsSearch`
-0. invoked from `FriendSearchBar` `onChange` when empty
-0. The `FriendSuggestion` reducer resets `friendsSuggestions` in the application's state.
+  0. invoked from `FriendSearchBar` `onChange` when empty
+  0. The `FriendSuggestion` reducer resets `friendsSuggestions` in the application's state.
 
 ### Routes Search Cycle
 
 * `fetchRoutesSearch`
-0. invoked from `RouteSearchBar` `onChange` when there is text
-0. `GET /api/routes` is called with `text` param.
-0. `receiveSearchedRoutes` is set as the success callback.
+  0. invoked from `RouteSearchBar` `onChange` when there is text
+  0. `GET /api/routes` is called with `text` param.
+  0. `receiveSearchedRoutes` is set as the success callback.
 
 * `receiveSearchedRoutes`
-0. invoked from an API callback.
-0. The `RouteSuggestion` reducer updates `routesSuggestions` in the application's state.
+  0. invoked from an API callback.
+  0. The `RouteSuggestion` reducer updates `routesSuggestions` in the application's state.
 
 * `removeFriendsSearch`
-0. invoked from `FriendSearchBar` `onChange` when empty
-0. The `RouteSuggestion` reducer resets `routesSuggestions` in the application's state.
+  0. invoked from `FriendSearchBar` `onChange` when empty
+  0. The `RouteSuggestion` reducer resets `routesSuggestions` in the application's state.
