@@ -32,8 +32,10 @@
     - RoutesSearchResults
 
 **RouteDetailContainer**
+  -RouteForm
 
 **TripDetailContainer**
+  -TripForm
   - CommentsFormContainer
   - CommentsFormContainer
 

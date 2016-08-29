@@ -40,6 +40,8 @@
       expenditure: 200.05,    // I originally referred to this as "budget"
       author_id: 1
     }
-  }
+  },
+  routesSuggestions: [],
+  friendsSuggestions: []
 }
 ```
