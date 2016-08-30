@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
 			email: "",
 			password: ""
 		};
-		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	componentDidUpdate(){
@@ -22,16 +21,6 @@ class SessionForm extends React.Component {
 			hashHistory.push("/");
 		}
 	}
-
-	// update(field){
-	// 	return e => { this.setState({[field]: e.currentTarget.value }); };
-	// }
-	//
-	// handleSubmit(e){
-	// 	e.preventDefault();
-	// 	const user = this.state;
-	// 	this.props.processForm({user});
-	// }
 
 	navLink(){
 		if (this.props.formType === "login") {
@@ -77,34 +66,3 @@ class SessionForm extends React.Component {
 }
 
 export default SessionForm;
-
-// return (
-// 	<div className="login-form-container">
-// 		<form onSubmit={this.handleSubmit} className="login-form-box">
-// 			Welcome to MapMyTravels!
-// 			<br/>
-// 			Please { this.props.formType } or { this.navLink() }
-// 			{ this.renderErrors() }
-// 			<div className="login-form">
-// 				<br />
-// 				<label> Email:
-// 					<input type="text"
-// 						value={this.state.email}
-// 						onChange={this.update("email")}
-// 						className="login-input" />
-// 				</label>
-//
-// 				<br />
-// 				<label> Password:
-// 					<input type="password"
-// 						value={this.state.password}
-// 						onChange={this.update("password")}
-// 						className="login-input" />
-// 				</label>
-//
-// 				<br />
-// 				<input type="submit" value="Submit" />
-// 			</div>
-// 		</form>
-// 	</div>
-// );

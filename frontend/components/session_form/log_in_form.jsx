@@ -14,16 +14,6 @@ class LogInForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidUpdate(){
-  //   this.redirectIfLoggedIn();
-  // }
-  //
-  // redirectIfLoggedIn(){
-  //   if (this.props.loggedIn){
-  //     hashHistory.push("/");
-  //   }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
