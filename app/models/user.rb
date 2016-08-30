@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
             :last_name, :date_of_birth, :gender, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :gender, inclusion: { in: ["M", "F"] }
 
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
