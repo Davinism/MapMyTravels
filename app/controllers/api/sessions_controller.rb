@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       log_in_user!(@user)
       render "api/users/show"
     else
-      render "Invalid username/password combination"
+      render "Invalid username/password combination", status: 401
     end
   end
 
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
       log_out_user!
       render "api/users/show"
     else
-      render "Nobody signed in"
+      render "Nobody signed in", status: 404
     end
   end
 
