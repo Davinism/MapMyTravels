@@ -31,7 +31,7 @@ class LogInForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
             <br />
-            <label> Email:
+            <label className="visually-hidden"> Email:
               <input type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
@@ -39,7 +39,7 @@ class LogInForm extends React.Component {
             </label>
 
             <br />
-            <label> Password:
+            <label className="visually-hidden"> Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
