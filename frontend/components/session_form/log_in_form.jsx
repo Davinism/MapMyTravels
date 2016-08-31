@@ -31,23 +31,21 @@ class LogInForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
             <br />
-            <label className="visually-hidden"> Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="login-input" />
-            </label>
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              className="login-input"
+              placeholder="Email" />
 
             <br />
-            <label className="visually-hidden"> Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input" />
-            </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              className="login-input"
+              placeholder="Password" />
 
             <br />
-            <input type="submit" value="Submit" />
+            <input className="login-button" type="submit" value="LOG IN" />
           </div>
         </form>
       </div>

@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
   }
 
+  // For logout purposes:
   componentWillReceiveProps(nextProps) {
     // debugger
     // if (!nextProps.currentUser) {

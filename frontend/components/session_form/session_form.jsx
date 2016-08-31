@@ -54,9 +54,6 @@ class SessionForm extends React.Component {
 
 		return (
 			<div className="form-container">
-				Welcome to MapMyTravels!
-				<br/>
-				Please { this.props.formType } or { this.navLink() }
 				{ this.renderErrors() }
 				{ typeOfForm }
 			</div>

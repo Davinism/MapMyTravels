@@ -48,39 +48,36 @@ class SignUpForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="signup-form-box">
           <div className="signup-form">
             <br />
-            <label> First Name:
-              <input type="text"
-                value={this.state.firstName}
-                onChange={this.update("firstName")}
-                className="signup-input" />
-            </label>
+            <input type="text"
+              value={this.state.firstName}
+              onChange={this.update("firstName")}
+              className="signup-input"
+              placeholder="First Name"/>
 
             <br />
-            <label> Last Name:
-              <input type="text"
-                value={this.state.lastName}
-                onChange={this.update("lastName")}
-                className="signup-input" />
-            </label>
+            <input type="text"
+              value={this.state.lastName}
+              onChange={this.update("lastName")}
+              className="signup-input"
+              placeholder="Last Name"/>
 
             <br />
-            <label> Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="signup-input" />
-            </label>
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              className="signup-input"
+              placeholder="Email"/>
 
             <br />
-            <label> Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="signup-input" />
-            </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              className="signup-input"
+              placeholder="Password"/>
 
             <br />
-            <label>Date of Birth:
+            <label className="date-of-birth-label">Date of Birth:</label>
+            <div className="date-of-birth-selector">
               <select onChange={this.update("monthOfBirth")} value={this.state.monthOfBirth}>
                 <option value="01">January</option>
                 <option value="02">February</option>
@@ -307,16 +304,16 @@ class SignUpForm extends React.Component {
                 <option value="1917">1917</option>
 
               </select>
-            </label>
+            </div>
 
             <br />
-            <label> Gender:
-                <input type="radio" name="gender" value="M" onChange={this.update("gender")} /> Male
-                <input type="radio" name="gender" value="F" onChange={this.update("gender")} /> Female
-            </label>
+            <div className="gender-selector">
+                <input type="radio" name="gender" value="M" onChange={this.update("gender")} />Male
+                <input type="radio" name="gender" value="F" onChange={this.update("gender")} />Female
+            </div>
 
             <br />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="signup-button" />
           </div>
         </form>
       </div>
