@@ -35,7 +35,7 @@ $orange: #EBA74D;
   margin: auto 0;
   margin-right: 20%;
   .selected{
-    width: 50%;
+    width: 45%;
     border-radius: 5px;
     display: inline-block;;
     margin: auto 0;
@@ -52,7 +52,7 @@ $orange: #EBA74D;
     }
   }
   .unselected{
-    width: 50%;
+    width: 45%;
     border-radius: 5px;
     display: inline-block;
     margin: auto 0;
@@ -74,4 +74,12 @@ $orange: #EBA74D;
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
+}
+
+.form-container {
+  background-color: #ccc;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 25%;
+  text-align: center;
 }

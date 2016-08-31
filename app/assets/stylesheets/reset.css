@@ -42,7 +42,7 @@ input[type="submit"] {
 }
 
 body {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 
 .group:after {

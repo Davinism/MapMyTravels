@@ -1,3 +1,77 @@
-// Place all the styles related to the api/sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("reset.css");
+
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+}
+
+.header-nav h1 {
+  font-family: $header-font;
+  font-size: 30px;
+  color: $main-theme;
+  display: inline-block;
+  padding: 10px;
+}
+
+.header-nav-element {
+  display: inline-block;
+  margin: auto 0;
+  color: $gray;
+  font-family: $main-font;
+  padding: 10px;
+}
+
+.login-signup {
+  width: 15%;
+  display: inline-block;
+  margin: auto 0;
+  margin-right: 20%;
+  .selected{
+    width: 50%;
+    border-radius: 5px;
+    display: inline-block;;
+    margin: auto 0;
+    font-family: $main-font;
+    background-color: $green;
+    border: 2px solid $green;
+    color: #fff;
+    overflow: auto;
+    text-align: center;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .unselected{
+    width: 50%;
+    border-radius: 5px;
+    display: inline-block;
+    margin: auto 0;
+    font-family: $main-font;
+    border: 2px solid #ccc;
+    color: $gray;
+    overflow: auto;
+    text-align: center;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
