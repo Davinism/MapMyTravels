@@ -3,6 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import LogInForm from './log_in_form';
 import SignUpForm from './sign_up_form';
 import Footer from '../footer/footer';
+import WelcomeText from './welcome_text';
 
 class SessionForm extends React.Component {
 	constructor(props){
@@ -57,7 +58,10 @@ class SessionForm extends React.Component {
 			<section className="main">
 				<div className="form-container">
 					{ this.renderErrors() }
-					{ typeOfForm }
+					<section className="main-content">
+						{ typeOfForm }
+						<WelcomeText />
+					</section>
 				</div>
 				<Footer />
 		</section>

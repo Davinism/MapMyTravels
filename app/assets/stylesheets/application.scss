@@ -222,3 +222,13 @@ $picture-height: 500px;
   justify-content: space-between;
   text-align: center;
 }
+
+.welcome {
+  display: inline-block;
+  width: 33%;
+  font-family: $main-font;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 2%;
+  text-align: left;
+}
