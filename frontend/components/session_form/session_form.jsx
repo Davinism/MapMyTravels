@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import LogInForm from './log_in_form';
 import SignUpForm from './sign_up_form';
+import Footer from '../footer/footer';
 
 class SessionForm extends React.Component {
 	constructor(props){
@@ -53,10 +54,13 @@ class SessionForm extends React.Component {
 		}
 
 		return (
-			<div className="form-container">
-				{ this.renderErrors() }
-				{ typeOfForm }
-			</div>
+			<section className="main">
+				<div className="form-container">
+					{ this.renderErrors() }
+					{ typeOfForm }
+				</div>
+				<Footer />
+		</section>
 		);
 	}
 
