@@ -8,8 +8,11 @@ class App extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.router.push('/login');
+  componentWillReceiveProps(nextProps) {
+    // debugger
+    // if (!nextProps.currentUser) {
+    //   this.props.router.push('/login');
+    // }
   }
 
   render() {
@@ -27,15 +30,3 @@ class App extends React.Component {
 }
 
 export default withRouter(App);
-
-// const App = ({children, location}) => (
-//   <div>
-//     <header className="main-header">
-//       <Link to="/" className="header-link"><HeaderNav /></Link>
-//       <GreetingContainer location={location} />
-//     </header>
-//     {children}
-//   </div>
-// );
-//
-// export default App;
