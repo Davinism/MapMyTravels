@@ -10,7 +10,7 @@ const Footer = () =>{
         <section className="element-title">
           MAP YOUR ROUTE
         </section>
-
+        <br/>
         <section className="element-info">
           Know where you're going,<br/>
           see where you've been
@@ -23,7 +23,7 @@ const Footer = () =>{
         <section className="element-title">
           LOG YOUR TRIPS
         </section>
-
+        <br/>
         <section className="element-info">
           Keep track of your trips, <br/>
           along with the dates, budget, <br/>
@@ -37,7 +37,7 @@ const Footer = () =>{
         <section className="element-title">
           SHARE WITH FRIENDS
         </section>
-
+        <br/>
         <section className="element-info">
           Let your friends know where <br/>
         you've been, and help plan <br/>
@@ -50,12 +50,3 @@ const Footer = () =>{
 };
 
 export default Footer;
-
-// <div>
-//   <FontAwesome className='super-crazy-colors'
-//     name='rocket'
-//     size='2x'
-//     spin
-//     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
-//   <div>I am the Footer</div>
-// </div>
