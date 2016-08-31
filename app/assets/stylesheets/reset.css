@@ -41,6 +41,10 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+body {
+  box-sizing: border-box;
+}
+
 .group:after {
   content: "";
   display: block;

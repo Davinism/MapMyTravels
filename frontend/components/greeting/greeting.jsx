@@ -1,13 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign up!</Link>
-  </nav>
-);
+const sessionLinks = (pathName) => {
+  let loginSelected, signupSelected;
+
+  if (pathName === "/login") {
+    loginSelected = "selected";
+    signupSelected = "unselected";
+  } else if (pathName === "/signup") {
+    loginSelected = "unselected";
+    signupSelected = "selected";
+  }
+
+  return (
+    <nav className="login-signup">
+      <span className={loginSelected}>
+        <Link to="/login" activeClassName="current">Log In</Link>
+      </span>
+      <span className={signupSelected}>
+        <Link to="/signup" activeClassName="current">Sign Up</Link>
+      </span>
+    </nav>
+  );
+};
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
@@ -16,11 +31,11 @@ const personalGreeting = (currentUser, logout) => (
 	</hgroup>
 );
 
-function Greeting({currentUser, logout}){
+function Greeting({currentUser, logout, location}){
   if (currentUser){
     return personalGreeting(currentUser, logout);
   } else {
-    return sessionLinks();
+    return sessionLinks(location.pathname);
   }
 }
 
