@@ -6,7 +6,7 @@
 
 ## Minimum Viable Product
 
-MayMyTravels is a web application built using Ruby on Rails and
+MapMyTravels is a web application built using Ruby on Rails and
 React/Redux and is inspired by MayMyRun. This application allows users
 to mark their traveling routes on Google Maps with some pertinent data,
 such as duration and budget, and creates a social networking platform
