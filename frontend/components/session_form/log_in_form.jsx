@@ -27,7 +27,7 @@ class LogInForm extends React.Component {
   render() {
 
     return (
-      <div className="login-form-container">
+      <div className="login-form-container" style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}}>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
             <br />
