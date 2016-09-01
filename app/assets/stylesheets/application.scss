@@ -81,6 +81,7 @@ $picture-height: 500px;
 
 .form-container {
   background-image: url("http://res.cloudinary.com/davinkim93/image/upload/v1472667556/flying_in_a_plane_i2mn5s.jpg");
+  // background: url("http://res.cloudinary.com/davinkim93/video/upload/v1472684776/MapMyTravels_Slideshow_lrz7rx.mp4");
   background-size: 100% $picture-height;
   display: inline-block;
   width: 100%;
@@ -217,7 +218,7 @@ $picture-height: 500px;
 
 .footer-container {
   width: 80%;
-  margin: 2% auto 0  auto;
+  margin: 2% auto;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -232,3 +233,13 @@ $picture-height: 500px;
   margin-top: 2%;
   text-align: left;
 }
+
+// #background-video{
+//   z-index:-1;
+//   display: flex;
+//   justify-content: center;
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   padding: none;
+// }
