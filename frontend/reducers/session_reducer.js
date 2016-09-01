@@ -1,5 +1,6 @@
 import { SessionConstants } from '../actions/session_actions';
 import merge from 'lodash/merge';
+import { hashHistory } from 'react-router';
 
 const _nullUser = Object.freeze({
   currentUser: null,

@@ -20,10 +20,10 @@ class SessionForm extends React.Component {
 			currentImageIdx: 0
 		};
 
-		this.changePicture = this.changePicture.bind(this);
 	}
 
 	componentDidMount() {
+		this.changePicture = this.changePicture.bind(this);
 		function preloadImage(url) {
       const img = new Image();
       img.src = url;
@@ -34,6 +34,10 @@ class SessionForm extends React.Component {
     });
 
 		this.intervalId = setInterval(this.changePicture, 5000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.intervalId);
 	}
 
 	changePicture() {
