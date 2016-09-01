@@ -1,52 +1,71 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-const sessionLinks = (pathName) => {
-  let loginSelected, signupSelected;
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
 
-  if (pathName === "/login") {
-    loginSelected = "selected";
-    signupSelected = "unselected";
-  } else if (pathName === "/signup") {
-    loginSelected = "unselected";
-    signupSelected = "selected";
+    this.sessionLinks = this.sessionLinks.bind(this);
+    this.personalGreeting = this.personalGreeting.bind(this);
   }
 
-  return (
-    <nav className="login-signup">
-      <span className={loginSelected}>
-        <Link to="/login" activeClassName="current">Log In</Link>
-      </span>
-      <span className={signupSelected}>
-        <Link to="/signup" activeClassName="current">Sign Up</Link>
-      </span>
-    </nav>
-  );
-};
-
-const personalGreeting = (currentUser, logout) => {
-  const properLogOut = () => {
-    logout();
-
-  };
-
-  return (
-  	<hgroup className="header-group">
-  		<h2 className="header-name">Hi, {currentUser.first_name}!</h2>
-  		<button className="header-button" onClick={logout}>Log Out</button>
-  	</hgroup>
-  );
-};
-
-function Greeting({currentUser, logout, location}){
-  if (currentUser){
-    return personalGreeting(currentUser, logout);
-  } else {
-    const hist = hashHistory;
-    if (location.pathname !== "/login" && location.pathname !== "/signup") {
-      hist.push('/login');
+  componentWillReceiveProps(newProps) {
+    if (!this.props.currentUser && newProps.currentUser) {
+      hashHistory.replace('/dashboard');
     }
-    return sessionLinks(location.pathname);
+  }
+
+  sessionLinks(pathName) {
+    let loginSelected, signupSelected;
+
+    if (pathName === "/login") {
+      loginSelected = "selected";
+      signupSelected = "unselected";
+    } else if (pathName === "/signup") {
+      loginSelected = "unselected";
+      signupSelected = "selected";
+    }
+
+    return (
+      <nav className="login-signup">
+        <span className={loginSelected}>
+          <Link to="/login" activeClassName="current">Log In</Link>
+        </span>
+        <span className={signupSelected}>
+          <Link to="/signup" activeClassName="current">Sign Up</Link>
+        </span>
+      </nav>
+    );
+  }
+
+  personalGreeting(currentUser, logout) {
+    const properLogOut = () => {
+      logout();
+
+    };
+
+    return (
+    	<hgroup className="header-group">
+    		<h2 className="header-name">Hi, {currentUser.first_name}!</h2>
+    		<button className="header-button" onClick={logout}>Log Out</button>
+    	</hgroup>
+    );
+  }
+
+  render() {
+    const currentUser = this.props.currentUser;
+    const logout = this.props.logout;
+    const location = this.props.location;
+
+    if (currentUser){
+      return this.personalGreeting(currentUser, logout);
+    } else {
+      const hist = hashHistory;
+      if (location.pathname !== "/login" && location.pathname !== "/signup") {
+        hist.push('/login');
+      }
+      return this.sessionLinks(location.pathname);
+    }
   }
 }
 
