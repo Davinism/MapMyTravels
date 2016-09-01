@@ -27,6 +27,11 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
+  has_many :routes,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Route
+
   attr_reader :password
 
   def self.find_by_credentials(email_address, pw)

@@ -43,7 +43,7 @@ function Greeting({currentUser, logout, location}){
     return personalGreeting(currentUser, logout);
   } else {
     const hist = hashHistory;
-    if (location.pathname !== "/login") {
+    if (location.pathname !== "/login" && location.pathname !== "/signup") {
       hist.push('/login');
     }
     return sessionLinks(location.pathname);
