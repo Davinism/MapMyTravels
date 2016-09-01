@@ -10,8 +10,29 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = {
 			email: "",
-			password: ""
+			password: "",
+			images: [
+				"http://res.cloudinary.com/davinkim93/image/upload/v1472667556/flying_in_a_plane_i2mn5s.jpg",
+				"http://res.cloudinary.com/davinkim93/image/upload/v1472667530/grand_canyon_m4fvfz.jpg",
+				"http://res.cloudinary.com/davinkim93/image/upload/v1472667632/chicago_ktwio6.jpg",
+				"http://res.cloudinary.com/davinkim93/image/upload/v1472667493/aurora_evckmi.jpg"
+			],
+			currentImageIdx: 0
 		};
+
+		this.changePicture = this.changePicture.bind(this);
+	}
+
+	componentDidMount() {
+		this.intervalId = setInterval(this.changePicture, 5000);
+	}
+
+	changePicture() {
+		if (this.state.currentImageIdx === this.state.images.length - 1) {
+			this.setState({currentImageIdx: 0});
+		} else {
+			this.setState({currentImageIdx: this.state.currentImageIdx + 1});
+		}
 	}
 
 	componentDidUpdate(){
@@ -56,7 +77,7 @@ class SessionForm extends React.Component {
 
 		return (
 			<section className="main">
-				<div className="form-container">
+				<div className="form-container" style={{backgroundImage: `url(${this.state.images[this.state.currentImageIdx]})`}}>
 					{ this.renderErrors() }
 					<section className="main-content">
 						{ typeOfForm }
