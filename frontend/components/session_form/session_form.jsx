@@ -24,6 +24,15 @@ class SessionForm extends React.Component {
 	}
 
 	componentDidMount() {
+		function preloadImage(url) {
+      const img = new Image();
+      img.src = url;
+    }
+
+    this.state.images.forEach( url => {
+      preloadImage(url);
+    });
+
 		this.intervalId = setInterval(this.changePicture, 5000);
 	}
 
@@ -75,8 +84,15 @@ class SessionForm extends React.Component {
 			typeOfForm = <SignUpForm processForm={this.props.processForm} />;
 		}
 
+		const imageTags = this.state.images.map( (url, index) => {
+			return <img key={index} src={url} />;
+		});
+
 		return (
 			<section className="main">
+				<div className="hidden">
+					{ imageTags }
+				</div>
 				<div className="form-container" style={{backgroundImage: `url(${this.state.images[this.state.currentImageIdx]})`}}>
 					{ this.renderErrors() }
 					<section className="main-content">
