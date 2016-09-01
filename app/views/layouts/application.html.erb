@@ -4,6 +4,23 @@
   <title>MapMyTravels</title>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <script type="text/javascript">
+    function preloadImage(url) {
+      const img = new Image();
+      img.src = url;
+    }
+
+    const myImageUrls = [
+      "http://res.cloudinary.com/davinkim93/image/upload/v1472667556/flying_in_a_plane_i2mn5s.jpg",
+      "http://res.cloudinary.com/davinkim93/image/upload/v1472667530/grand_canyon_m4fvfz.jpg",
+      "http://res.cloudinary.com/davinkim93/image/upload/v1472667632/chicago_ktwio6.jpg",
+      "http://res.cloudinary.com/davinkim93/image/upload/v1472667493/aurora_evckmi.jpg"
+    ];
+
+    myImageUrls.forEach( url => {
+      preloadImage(url);
+    });
+  </script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
