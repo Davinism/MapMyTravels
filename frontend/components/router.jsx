@@ -6,6 +6,7 @@ import App from './App';
 import SessionFormContainer from './session_form/session_form_container';
 import Greeting from './greeting/greeting';
 import DashboardContainer from './dashboard/dashboard_container';
+import CreateRouteFormContainer from './create_route_form/create_route_form_container';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -37,6 +38,7 @@ class AppRouter extends React.Component{
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/create_route" component={ CreateRouteFormContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );

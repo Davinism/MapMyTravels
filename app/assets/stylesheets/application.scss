@@ -284,4 +284,14 @@ $picture-height: 500px;
     width: 30%;
     height: 30px;
   }
+
+  div:hover {
+    background: green;
+  }
+}
+
+#map-container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
 }
