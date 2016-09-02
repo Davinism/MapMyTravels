@@ -4,6 +4,7 @@ User.create!(email: "kevinbacon@gmail.com",
               last_name: "Bacon",
               date_of_birth: "07/08/1958",
               gender: "M",
+              profile_picture: "http://res.cloudinary.com/davinkim93/image/upload/v1472773077/kevin_bacon_rfieaq.jpg"
               )
 
 User.create!(email: "taylorswift@gmail.com",
@@ -11,7 +12,8 @@ User.create!(email: "taylorswift@gmail.com",
               first_name: "Taylor",
               last_name: "Swift",
               date_of_birth: "12/13/1989",
-              gender: "F"
+              gender: "F",
+              profile_picture: "http://res.cloudinary.com/davinkim93/image/upload/v1472773085/taylor_swift_sa8vhf.jpg"
               )
 
 User.create!(email: "conan@teamcoco.com",
@@ -19,7 +21,8 @@ User.create!(email: "conan@teamcoco.com",
               first_name: "Conan",
               last_name: "O'brien",
               date_of_birth: "04/18/1963",
-              gender: "M"
+              gender: "M",
+              profile_picture: "http://res.cloudinary.com/davinkim93/image/upload/v1472773086/conan_o_brien_mqnz38.jpg"
               )
 
 User.create!(email: "jschlansky@teamcoco.com",
@@ -27,7 +30,8 @@ User.create!(email: "jschlansky@teamcoco.com",
               first_name: "Jordan",
               last_name: "Schlansky",
               date_of_birth: "04/13/1973",
-              gender: "M"
+              gender: "M",
+              profile_picture: "http://res.cloudinary.com/davinkim93/image/upload/v1472773091/jordan_schlansky_esou6k.png"
               )
 
 Route.create!(

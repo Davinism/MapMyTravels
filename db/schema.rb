@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901204614) do
+ActiveRecord::Schema.define(version: 20160901235406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,18 +29,19 @@ ActiveRecord::Schema.define(version: 20160901204614) do
   add_index "routes", ["author_id"], name: "index_routes_on_author_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",            null: false
-    t.string   "password_digest",  null: false
-    t.string   "session_token",    null: false
-    t.string   "first_name",       null: false
-    t.string   "last_name",        null: false
-    t.string   "date_of_birth",    null: false
-    t.string   "gender",           null: false
+    t.string   "email",                                                                                                         null: false
+    t.string   "password_digest",                                                                                               null: false
+    t.string   "session_token",                                                                                                 null: false
+    t.string   "first_name",                                                                                                    null: false
+    t.string   "last_name",                                                                                                     null: false
+    t.string   "date_of_birth",                                                                                                 null: false
+    t.string   "gender",                                                                                                        null: false
     t.text     "bio"
     t.text     "hobbies"
     t.text     "kind_of_traveler"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                                                                                                    null: false
+    t.datetime "updated_at",                                                                                                    null: false
+    t.string   "profile_picture",  default: "http://res.cloudinary.com/davinkim93/image/upload/v1472774509/default_iall0v.jpg", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

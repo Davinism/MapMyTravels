@@ -8,8 +8,6 @@ import { hashHistory } from 'react-router';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = (user) => {
-    // hashHistory.replace('/dashboard');
-    // console.log(location.pathname);
     dispatch(receiveCurrentUser(user));
   };
 

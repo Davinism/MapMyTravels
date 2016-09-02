@@ -10,6 +10,7 @@ $green: #9FCA49;
 $orange: #EBA74D;
 $picture-height: 500px;
 
+// Header stuff:
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -32,6 +33,7 @@ $picture-height: 500px;
   padding: 10px;
 }
 
+// Main part of the authentication page:
 .login-signup {
   width: 15%;
   display: flex;
@@ -80,12 +82,6 @@ $picture-height: 500px;
 }
 
 .form-container {
-  // background-image: url("http://res.cloudinary.com/davinkim93/image/upload/v1472667556/flying_in_a_plane_i2mn5s.jpg");
-  // background-image: url("http://res.cloudinary.com/davinkim93/image/upload/v1472667530/grand_canyon_m4fvfz.jpg");
-  // background-image: url("http://res.cloudinary.com/davinkim93/image/upload/v1472667632/chicago_ktwio6.jpg");
-  // background-image: url("http://res.cloudinary.com/davinkim93/image/upload/v1472667493/aurora_evckmi.jpg");
-
-  // background: url("http://res.cloudinary.com/davinkim93/video/upload/v1472684776/MapMyTravels_Slideshow_lrz7rx.mp4");
   background-size: 100% $picture-height;
   display: inline-block;
   width: 100%;
@@ -204,6 +200,7 @@ $picture-height: 500px;
   }
 }
 
+// Footer stuff:
 .element-icon {
   color: $main-theme;
   font-size: 144px;
@@ -240,4 +237,51 @@ $picture-height: 500px;
 
 .hidden {
   display: none;
+}
+
+// Log out and profile:
+
+.header-group {
+  width: 15%;
+  display: flex;
+  margin: auto 15% auto 0;
+  justify-content: space-around;;
+  border-radius: 5px;
+  font-family: $main-font;
+  border: 2px solid $green;
+  text-align: center;
+
+  .profile-picture {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+  }
+
+  .header-button {
+    padding: 5%;
+    height: 75%;
+    margin: auto 0;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+
+  .header-button:hover {
+    background-color: #ccc;
+  }
+}
+
+// Home page header:
+.home-page-header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  background: $gray;
+  div {
+    display: inline-block;
+    background: red;
+    width: 30%;
+    height: 30px;
+  }
 }
