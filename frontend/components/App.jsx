@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div>
         <header className="main-header">
-          <Link to="/login" className="header-link"><HeaderNav /></Link>
+          <Link to="/dashboard" className="header-link"><HeaderNav /></Link>
           <GreetingContainer location={this.props.location} />
         </header>
         {this.props.children}
