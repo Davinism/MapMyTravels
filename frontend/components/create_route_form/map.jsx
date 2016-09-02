@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class AppMap extends React.Component {
   constructor(props) {
@@ -6,13 +7,19 @@ class AppMap extends React.Component {
 
     this.state = {
       coords: [],
-      totalDistance: 0
+      totalDistance: 0,
+      name: "",
+      description: ""
     };
 
     this.placeMarker = this.placeMarker.bind(this);
     this.makeRoute = this.makeRoute.bind(this);
     this.initialize = this.initialize.bind(this);
     this.calculateDistance = this.calculateDistance.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+    this.navigateToDashboard = this.navigateToDashboard.bind(this);
   }
 
   componentDidMount() {
@@ -155,6 +162,19 @@ class AppMap extends React.Component {
     }
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    // Dispatch the create route here!
+  }
+
+  update(property) {
+    return event => this.setState({[property]: event.target.value});
+  }
+
+  navigateToDashboard() {
+    this.props.router.push("/dashboard");
+  }
+
   render() {
 
     const coordsList = this.state.coords.map( (coord, index) => {
@@ -169,10 +189,25 @@ class AppMap extends React.Component {
           <br />
           <li>{ this.state.totalDistance }</li>
         </ul>
+        <form className="route-form" onSubmit={this.handleSubmit}>
+          <div>Here is the form!</div>
+          <input
+            type="text"
+            value={this.state.name}
+            placeholder="Name of route"
+            onChange={this.update("name")} />
+          <textarea
+            value={this.state.description}
+            placeholder="Describe this route!"
+            onChange={this.update("description")}></textarea>
+          <button className="create-route-form" onClick={this.navigateToDashboard}>
+            Create Route
+          </button>
+        </form>
       </section>
     );
   }
 
 }
 
-export default AppMap;
+export default withRouter(AppMap);
