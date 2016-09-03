@@ -11,7 +11,9 @@ class CreateRouteForm extends React.Component {
     return (
       <div>
         <HomePageHeader />
-        <AppMap />
+        <AppMap
+          currentUser={this.props.currentUser}
+          createRoute={this.props.createRoute} />
       </div>
     );
   }

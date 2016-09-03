@@ -5,3 +5,12 @@ export const fetchAllRoutes = (success) => {
     success
   });
 };
+
+export const createRoute = (route, success) => {
+  $.ajax({
+    method: 'POST',
+    url: 'api/routes',
+    data: route,
+    success
+  });
+};

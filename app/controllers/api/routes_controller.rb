@@ -5,6 +5,7 @@ class Api::RoutesController < ApplicationController
   end
 
   def create
+    debugger
     fail
     @route = Route.new(route_params)
 

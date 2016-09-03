@@ -1,6 +1,8 @@
 export const RouteConstants = {
   RECEIVE_ROUTES: "RECEIVE_ROUTES",
-  REQUEST_ROUTES: "REQUEST_ROUTES"
+  REQUEST_ROUTES: "REQUEST_ROUTES",
+  CREATE_ROUTE: "CREATE_ROUTE",
+  RECEIVE_SINGLE_ROUTE: "RECEIVE_SINGLE_ROUTE"
 };
 
 export const requestRoutes = () => ({
@@ -10,4 +12,14 @@ export const requestRoutes = () => ({
 export const receiveRoutes = (routes) => ({
   type: RouteConstants.RECEIVE_ROUTES,
   routes
+});
+
+export const createRoute = (route) => ({
+  type: RouteConstants.CREATE_ROUTE,
+  route
+});
+
+export const receiveSingleRoute = (route) => ({
+  type: RouteConstants.RECEIVE_SINGLE_ROUTE,
+  route
 });

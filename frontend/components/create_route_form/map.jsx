@@ -164,7 +164,15 @@ class AppMap extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // Dispatch the create route here!
+    const route = {
+      name: this.state.name,
+      description: this.state.description,
+      author_id: this.props.currentUser.id,
+      distance: this.state.totalDistance,
+      coordinates: this.state.coords
+    };
+
+    this.props.createRoute({route});
   }
 
   update(property) {
