@@ -1,41 +1,18 @@
-@import url("reset.css");
-
 $header-font: 'Baloo Paaji', cursive;
 $main-font: 'Catamaran', sans-serif;
 $main-theme: #4891C0;
 $gray: #6D717A;
 $green: #9FCA49;
 $orange: #EBA74D;
-
-.header-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 33%;
-}
-
-.header-nav h1 {
-  font-family: $header-font;
-  font-size: 30px;
-  color: $main-theme;
-  display: inline-block;
-  padding: 10px;
-}
-
-.header-nav-element {
-  display: inline-block;
-  margin: auto 0;
-  color: $gray;
-  font-family: $main-font;
-  padding: 10px;
-}
+$picture-height: 500px;
 
 .login-signup {
   width: 15%;
-  display: inline-block;
+  display: flex;
   margin: auto 0;
-  margin-right: 20%;
+  justify-content: center;
   .selected{
-    width: 50%;
+    width: 45%;
     border-radius: 5px;
     display: inline-block;;
     margin: auto 0;
@@ -52,7 +29,7 @@ $orange: #EBA74D;
     }
   }
   .unselected{
-    width: 50%;
+    width: 45%;
     border-radius: 5px;
     display: inline-block;
     margin: auto 0;
@@ -74,4 +51,137 @@ $orange: #EBA74D;
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
+}
+
+.form-container {
+  background-size: 100% $picture-height;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  height: $picture-height;
+}
+
+.login-form-container {
+  display: inline-block;
+  width: 30%;
+  height: 200px;
+  margin: 2% 20% 0 auto;
+  float: right;
+  color: $gray;
+  border-radius: 5px;
+  .login-form {
+    margin: 1.5% auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+
+    .login-input {
+      z-index: 1;
+      opacity: 1;
+      font-family: $main-font;
+      background: #fff;
+      display: inline-block;
+      width: 75%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .login-button {
+      z-index: 1;
+      opacity: 1;
+      font-family: $main-font;
+      font-weight: 900;
+      display: inline-block;
+      width: 75%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #fff;
+      background: $orange;
+      color: #fff;
+    }
+  }
+}
+
+.signup-form-container {
+  display: inline-block;
+  width: 30%;
+  height: 450px;
+  margin: 2% 20% 0 auto;
+  float: right;
+  color: $gray;
+  border-radius: 5px;
+  .signup-form {
+    margin: 1.5% auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+
+    .signup-input {
+      z-index: 1;
+      opacity: 1;
+      font-family: $main-font;
+      background: #fff;
+      display: inline-block;
+      width: 75%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .date-of-birth-label {
+      font-family: $main-font;
+      color: #fff;
+    }
+
+    .date-of-birth-selector {
+      width: 75%;
+      select {
+        font-size: 20px;
+        background: #fff;
+        font-family: $main-font;
+        color: $gray;
+      }
+    }
+
+    .gender-selector {
+      width: 75%;
+      display: inline-block;
+      color: #fff;
+      font-family: $main-font;
+      input {
+        margin: 10px;
+      }
+    }
+
+    .signup-button {
+      z-index: 1;
+      opacity: 1;
+      font-family: $main-font;
+      font-weight: 900;
+      display: inline-block;
+      width: 75%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #fff;
+      background: $orange;
+      color: #fff;
+    }
+  }
+}
+
+.welcome {
+  display: inline-block;
+  width: 33%;
+  font-family: $main-font;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 2%;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,0 +1,29 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+}
+
+.header-nav h1 {
+  font-family: $header-font;
+  font-size: 30px;
+  color: $main-theme;
+  display: inline-block;
+  padding: 10px;
+}
+
+.header-nav-element {
+  display: inline-block;
+  margin: auto 0;
+  color: $gray;
+  font-family: $main-font;
+  padding: 10px;
+}

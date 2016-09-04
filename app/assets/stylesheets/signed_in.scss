@@ -1,0 +1,37 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.header-group {
+  width: 15%;
+  display: flex;
+  margin: auto 15% auto 0;
+  justify-content: space-around;;
+  border-radius: 5px;
+  font-family: $main-font;
+  border: 2px solid $green;
+  text-align: center;
+
+  .profile-picture {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+  }
+
+  .header-button {
+    padding: 5%;
+    height: 75%;
+    margin: auto 0;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+
+  .header-button:hover {
+    background-color: #ccc;
+  }
+}
