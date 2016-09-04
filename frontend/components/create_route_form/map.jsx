@@ -62,6 +62,7 @@ class AppMap extends React.Component {
       };
 
       directionsService.route(request, function(response, status) {
+        debugger;
         if (status === google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(response);
         }
@@ -189,14 +190,13 @@ class AppMap extends React.Component {
       return <li key={ index }>{coord}</li>;
     });
 
+
+
     return (
       <section className="map-data-container">
         <div id="map-container" ref="map"></div>
-        <img
-          src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
-&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-&markers=color:red%7Clabel:C%7C40.718217,-73.998284
-&key=AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0" />
+        <img id="static-map"
+          src="" />
         <ul>
           { coordsList }
           <br />
@@ -224,5 +224,10 @@ class AppMap extends React.Component {
 }
 
 // AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
+
+// "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=500x500&maptype=roadmap
+// &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+// &markers=color:red%7Clabel:C%7C40.718217,-73.998284&path=color:green|40.702147,-74.015794|40.711614,-74.012318|40.718217,-73.998284&sensor=false
+// &key=AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0"
 
 export default withRouter(AppMap);
