@@ -10,10 +10,11 @@
 #  coordinates :string           default([]), not null, is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  polyline    :string           default(""), not null
 #
 
 class Route < ActiveRecord::Base
-  validates :name, :description, :author_id, :distance, :coordinates, presence: true
+  validates :name, :description, :author_id, :distance, :coordinates, :polyline, presence: true
 
   belongs_to :author,
     primary_key: :id,

@@ -10,10 +10,9 @@ class Api::RoutesController < ApplicationController
       description: params[:route][:description],
       author_id: params[:route][:author_id],
       distance: params[:route][:distance],
-      coordinates: params[:route][:coordinates]
+      coordinates: params[:route][:coordinates],
+      polyline: params[:route][:polyline]
     )
-    debugger
-    fail
 
     if @route.save
       render "api/routes/show"
@@ -37,7 +36,8 @@ class Api::RoutesController < ApplicationController
       :description,
       :author_id,
       :distance,
-      :coordinates
+      :coordinates,
+      :polyline
     )
   end
 end

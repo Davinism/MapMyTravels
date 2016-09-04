@@ -9,7 +9,8 @@ class AppMap extends React.Component {
       coords: [],
       totalDistance: 0,
       name: "",
-      description: ""
+      description: "",
+      polyline: ""
     };
 
     this.placeMarker = this.placeMarker.bind(this);
@@ -61,9 +62,11 @@ class AppMap extends React.Component {
         travelMode: google.maps.DirectionsTravelMode.DRIVING
       };
 
+      const thisMap = this;
+
       directionsService.route(request, function(response, status) {
-        debugger;
         if (status === google.maps.DirectionsStatus.OK) {
+          thisMap.setState({polyline: response.routes[0].overview_polyline});
           directionsDisplay.setDirections(response);
         }
       });
@@ -92,9 +95,12 @@ class AppMap extends React.Component {
       this.prev = this.current;
       this.current = newCoord;
 
+      if (this.state.coords.length === 0) {
+        this.placeMarker(event.latLng, this.map);
+      }
+
       this.setState({coords: this.state.coords.concat(newCoord)});
 
-      this.placeMarker(event.latLng, this.map);
       let input = event.latLng;
       let lat = parseFloat(input.lat());
       let lng = parseFloat(input.lng());
@@ -170,10 +176,12 @@ class AppMap extends React.Component {
       description: this.state.description,
       author_id: this.props.currentUser.id,
       distance: this.state.totalDistance,
-      coordinates: this.state.coords
+      coordinates: this.state.coords,
+      polyline: this.state.polyline
     };
 
     this.props.createRoute({route});
+    this.props.router.push('/dashboard');
   }
 
   update(property) {
@@ -186,22 +194,20 @@ class AppMap extends React.Component {
 
   render() {
 
-    const coordsList = this.state.coords.map( (coord, index) => {
-      return <li key={ index }>{coord}</li>;
+    let coordsParam = "";
+    this.state.coords.forEach( (coord, index) => {
+      coordsParam = coordsParam + "|" + coord;
     });
-
-
 
     return (
       <section className="map-data-container">
         <div id="map-container" ref="map"></div>
         <img id="static-map"
-          src="" />
-        <ul>
-          { coordsList }
-          <br />
-          <li>{ this.state.totalDistance }</li>
-        </ul>
+          src={`https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=roadmap&path=color:green|enc:${this.state.polyline}&markers=color:red${coordsParam}`} />
+        <div className="distance">
+          { this.state.totalDistance }
+          {`https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=roadmap&path=color:green|enc:${this.state.polyline}&markers=color:red${coordsParam}`}
+        </div>
         <form className="route-form" onSubmit={this.handleSubmit}>
           <div>Here is the form!</div>
           <input
@@ -224,6 +230,7 @@ class AppMap extends React.Component {
 }
 
 // AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
+
 
 // "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=500x500&maptype=roadmap
 // &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318

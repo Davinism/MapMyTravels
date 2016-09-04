@@ -15,6 +15,7 @@
 #  kind_of_traveler :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  profile_picture  :string           default("http://res.cloudinary.com/davinkim93/image/upload/v1472774509/default_iall0v.jpg"), not null
 #
 
 class User < ActiveRecord::Base
