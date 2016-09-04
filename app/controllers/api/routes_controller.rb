@@ -5,9 +5,15 @@ class Api::RoutesController < ApplicationController
   end
 
   def create
+    @route = Route.new(
+      name: params[:route][:name],
+      description: params[:route][:description],
+      author_id: params[:route][:author_id],
+      distance: params[:route][:distance],
+      coordinates: params[:route][:coordinates]
+    )
     debugger
     fail
-    @route = Route.new(route_params)
 
     if @route.save
       render "api/routes/show"

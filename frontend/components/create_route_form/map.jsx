@@ -192,6 +192,11 @@ class AppMap extends React.Component {
     return (
       <section className="map-data-container">
         <div id="map-container" ref="map"></div>
+        <img
+          src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Clabel:C%7C40.718217,-73.998284
+&key=AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0" />
         <ul>
           { coordsList }
           <br />
@@ -208,7 +213,7 @@ class AppMap extends React.Component {
             value={this.state.description}
             placeholder="Describe this route!"
             onChange={this.update("description")}></textarea>
-          <button className="create-route-form" onClick={this.navigateToDashboard}>
+          <button className="create-route-form">
             Create Route
           </button>
         </form>
@@ -217,5 +222,7 @@ class AppMap extends React.Component {
   }
 
 }
+
+// AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
 
 export default withRouter(AppMap);
