@@ -12,6 +12,8 @@ class LogInForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogIn = this.demoLogIn.bind(this);
+    this.startDemo = this.startDemo.bind(this);
   }
 
   handleSubmit(e) {
@@ -22,6 +24,27 @@ class LogInForm extends React.Component {
 
   update(field) {
     return e => { this.setState({[field]: e.currentTarget.value}); };
+  }
+
+  demoLogIn() {
+    this.email = "kevinbacon@gmail.com";
+    this.password = "kevinbaconthebacon";
+    this.emailIndex = 1;
+    this.passwordIndex = 1;
+    this.demoInterval = setInterval(this.startDemo, 100);
+  }
+
+  startDemo() {
+    if (this.emailIndex <= this.email.length) {
+      this.setState({email: this.email.substring(0, this.emailIndex)});
+      this.emailIndex++;
+    } else if (this.passwordIndex <= this.password.length) {
+      this.setState({password: this.password.substring(0, this.passwordIndex)});
+      this.passwordIndex++;
+    } else {
+      clearInterval(this.demoInterval);
+      document.getElementsByClassName("login-button")[0].click();
+    }
   }
 
   render() {
@@ -47,7 +70,12 @@ class LogInForm extends React.Component {
             <br />
             <input className="login-button" type="submit" value="LOG IN" />
           </div>
+
         </form>
+        <br />
+        <br />
+        <br />
+        <input className="demo-login-button" type="submit" value="DEMO LOG IN" onClick={this.demoLogIn} />
       </div>
     );
   }

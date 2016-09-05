@@ -64,7 +64,7 @@ $picture-height: 500px;
 .login-form-container {
   display: inline-block;
   width: 30%;
-  height: 200px;
+  height: 300px;
   margin: 2% 20% 0 auto;
   float: right;
   color: $gray;
@@ -101,7 +101,26 @@ $picture-height: 500px;
       background: $orange;
       color: #fff;
     }
+
   }
+}
+
+.demo-login-button {
+  z-index: 1;
+  opacity: 1;
+  font-family: $main-font;
+  font-weight: 900;
+  display: inline-block;
+  width: 75%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background: #0D2CD2;
+  color: #fff;
+}
+
+.demo-login-button:hover {
+  cursor: pointer;
 }
 
 .signup-form-container {
