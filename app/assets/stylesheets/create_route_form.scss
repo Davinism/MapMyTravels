@@ -1,0 +1,24 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.map-data-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 2% auto;
+  width: 75%;
+
+  #map-container {
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+  }
+
+  .route-details {
+    // width: 40%;
+  }
+}

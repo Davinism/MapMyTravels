@@ -15,10 +15,10 @@ export const createRoute = (route, success) => {
   });
 };
 
-export const fetchSingleRoute = (route, success) => {
+export const fetchSingleRoute = (id, success) => {
   $.ajax({
     method: "GET",
-    url: `api/routes/${route.id}`,
+    url: `api/routes/${id}`,
     success
   });
 };

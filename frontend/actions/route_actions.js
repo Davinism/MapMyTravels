@@ -25,7 +25,7 @@ export const receiveSingleRoute = (route) => ({
   route
 });
 
-export const requestSingleRoute = (route) => ({
+export const requestSingleRoute = (id) => ({
   type: RouteConstants.REQUEST_SINGLE_ROUTE,
-  route
+  id
 });

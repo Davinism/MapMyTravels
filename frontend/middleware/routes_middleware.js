@@ -18,7 +18,7 @@ const RoutesMiddleware = ({getState, dispatch}) => next => action => {
       API.createRoute(action.route, createSuccess);
     case RouteConstants.REQUEST_SINGLE_ROUTE:
       const singleSuccess = data => dispatch(receiveSingleRoute(data));
-      API.fetchSingleRoute(action.route, singleSuccess);
+      API.fetchSingleRoute(action.id, singleSuccess);
     default:
       return next(action);
   }

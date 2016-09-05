@@ -202,27 +202,25 @@ class AppMap extends React.Component {
     return (
       <section className="map-data-container">
         <div id="map-container" ref="map"></div>
-        <img id="static-map"
-          src={`https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=roadmap&path=color:green|enc:${this.state.polyline}&markers=color:red${coordsParam}`} />
-        <div className="distance">
-          { this.state.totalDistance }
-          {`https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=roadmap&path=color:green|enc:${this.state.polyline}&markers=color:red${coordsParam}`}
+        <div className="route-details">
+          <div className="distance">
+            { this.state.totalDistance }
+          </div>
+          <form className="route-form" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={this.state.name}
+              placeholder="Name of route"
+              onChange={this.update("name")} />
+            <textarea
+              value={this.state.description}
+              placeholder="Describe this route!"
+              onChange={this.update("description")}></textarea>
+            <button className="create-route-form">
+              Create Route
+            </button>
+          </form>
         </div>
-        <form className="route-form" onSubmit={this.handleSubmit}>
-          <div>Here is the form!</div>
-          <input
-            type="text"
-            value={this.state.name}
-            placeholder="Name of route"
-            onChange={this.update("name")} />
-          <textarea
-            value={this.state.description}
-            placeholder="Describe this route!"
-            onChange={this.update("description")}></textarea>
-          <button className="create-route-form">
-            Create Route
-          </button>
-        </form>
       </section>
     );
   }

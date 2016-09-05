@@ -9,11 +9,14 @@ import DashboardContainer from './dashboard/dashboard_container';
 import CreateRouteFormContainer from './create_route_form/create_route_form_container';
 import RouteDetailContainer from './route_detail/route_detail_container';
 
+import { requestRoutes } from '../actions/route_actions';
+
 class AppRouter extends React.Component{
   constructor(props){
     super(props);
     this._ensureLoggedIn = this._ensureLoggedIn.bind(this);
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
+    this._getAllRoutes = this._getAllRoutes.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -32,6 +35,11 @@ class AppRouter extends React.Component{
     }
   }
 
+  _getAllRoutes(nextState, replace) {
+    this._ensureLoggedIn(nextState, replace);
+    this.context.store.dispatch(requestRoutes());
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
@@ -40,7 +48,7 @@ class AppRouter extends React.Component{
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/create_route" component={ CreateRouteFormContainer } onEnter={this._ensureLoggedIn} />
-          <Route path="route/:routeId" component={ RouteDetailContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="route/:routeId" component={ RouteDetailContainer } onEnter={this._getAllRoutes} />
         </Route>
       </Router>
     );

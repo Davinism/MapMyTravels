@@ -8,6 +8,7 @@
 @import "homepage_header.scss";
 @import "module.scss";
 @import "dashboard.scss";
+@import "create_route_form.scss";
 
 $header-font: 'Baloo Paaji', cursive;
 $main-font: 'Catamaran', sans-serif;
@@ -17,13 +18,13 @@ $green: #9FCA49;
 $orange: #EBA74D;
 $picture-height: 500px;
 
-#map-container {
+#static-map {
   width: 500px;
   height: 500px;
   margin: 0 auto;
 }
 
-#static-map {
+#detail-map-container {
   width: 500px;
   height: 500px;
   margin: 0 auto;

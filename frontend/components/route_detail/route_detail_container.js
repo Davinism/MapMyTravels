@@ -4,11 +4,11 @@ import { requestSingleRoute } from '../../actions/route_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  route: state.routes[Object.keys(state.routes)[0]]
+  routes: state.routes
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestSingleRoute: (route)=> dispatch(requestSingleRoute(route))
+  requestSingleRoute: (id)=> dispatch(requestSingleRoute(id))
 });
 
 export default connect(

@@ -10,10 +10,11 @@ class RoutesIndexItem extends React.Component {
 
   handleClick(e) {
     this.props.router.push(`/route/${this.props.route.id}`);
-    this.props.requestSingleRoute(this.props.route);
+    // this.props.requestSingleRoute(this.props.route);
   }
 
   render() {
+    console.log(this.props.route);
     let coordsParam = "";
     this.props.route.coordinates.forEach( (coord, index) => {
       coordsParam = coordsParam + "|" + coord;
