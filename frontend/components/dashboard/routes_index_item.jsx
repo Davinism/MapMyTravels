@@ -17,8 +17,11 @@ class RoutesIndexItem extends React.Component {
     &path=color:red|enc:${this.props.route.polyline}`;
 
     return (
-      <div className="item-static-map">
-        <img src={staticMapUrl} />
+      <div className="item-container">
+        <img className="item-static-map" src={staticMapUrl} />
+        <p className="item-text">
+          {this.props.route.name}<br />{this.props.route.distance.toFixed(2)} mi
+        </p>
       </div>
     );
   }

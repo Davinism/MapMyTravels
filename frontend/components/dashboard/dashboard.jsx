@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePageHeader from '../home_page_header/home_page_header';
 import RoutesIndex from './routes_index';
+import ModuleNavigator from '../module_navigator/module_navigator';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <HomePageHeader />
+        <ModuleNavigator path="/dashboard" />
         <RoutesIndex routes={this.state.routes} />
       </div>
     );

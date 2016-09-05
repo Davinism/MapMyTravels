@@ -5,6 +5,9 @@
 @import "api/sessions.scss";
 @import "authentication_page_footer.scss";
 @import "signed_in.scss";
+@import "homepage_header.scss";
+@import "module.scss";
+@import "dashboard.scss";
 
 $header-font: 'Baloo Paaji', cursive;
 $main-font: 'Catamaran', sans-serif;
@@ -13,25 +16,6 @@ $gray: #6D717A;
 $green: #9FCA49;
 $orange: #EBA74D;
 $picture-height: 500px;
-
-// Home page header:
-.home-page-header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  background: $gray;
-  div {
-    display: inline-block;
-    background: red;
-    width: 30%;
-    height: 30px;
-  }
-
-  div:hover {
-    background: green;
-  }
-}
 
 #map-container {
   width: 500px;
@@ -43,9 +27,4 @@ $picture-height: 500px;
   width: 500px;
   height: 500px;
   margin: 0 auto;
-}
-
-.item-static-map {
-  width: 250px;
-  height: 250px;
 }

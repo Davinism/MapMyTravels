@@ -1,0 +1,44 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.home-page-header {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  background: #ccc;
+  box-sizing: border-box;
+  div {
+    display: inline-block;
+    background: $main-theme;
+    width: 20%;
+    height: 100%;
+    border-right: 2px solid #fff;
+
+    a {
+      width: 100%;
+      line-height: 50px;
+      display: inline-block;
+      font-family: $main-font;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  div:first-child {
+    border-left: 2px solid #fff;
+  }
+
+  div:hover {
+    background: #fff;
+    a {
+      color: $main-theme;
+    }
+  }
+}

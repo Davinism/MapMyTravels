@@ -12,9 +12,15 @@ class RoutesIndex extends React.Component {
     });
 
     return (
-      <ul>
-        { routesList }
-      </ul>
+      <section className="dashboard">
+        <div className="recent-routes-header">
+          RECENT ROUTES
+        </div>
+
+        <div className="routes-index">
+          { routesList }
+        </div>
+      </section>
     );
   }
 }
