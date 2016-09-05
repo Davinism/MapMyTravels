@@ -1,7 +1,8 @@
 import {
   RouteConstants,
   receiveRoutes,
-  receiveSingleRoute
+  receiveSingleRoute,
+  requestSingleRoute
 } from '../actions/route_actions';
 
 import * as API from '../util/route_api_util';
@@ -15,6 +16,9 @@ const RoutesMiddleware = ({getState, dispatch}) => next => action => {
     case RouteConstants.CREATE_ROUTE:
       const createSuccess = data => dispatch(receiveSingleRoute(data));
       API.createRoute(action.route, createSuccess);
+    case RouteConstants.REQUEST_SINGLE_ROUTE:
+      const singleSuccess = data => dispatch(receiveSingleRoute(data));
+      API.fetchSingleRoute(action.route, singleSuccess);
     default:
       return next(action);
   }

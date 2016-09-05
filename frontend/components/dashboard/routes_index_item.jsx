@@ -10,6 +10,7 @@ class RoutesIndexItem extends React.Component {
 
   handleClick(e) {
     this.props.router.push(`/route/${this.props.route.id}`);
+    this.props.requestSingleRoute(this.props.route);
   }
 
   render() {

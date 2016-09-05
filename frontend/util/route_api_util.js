@@ -14,3 +14,11 @@ export const createRoute = (route, success) => {
     success
   });
 };
+
+export const fetchSingleRoute = (route, success) => {
+  $.ajax({
+    method: "GET",
+    url: `api/routes/${route.id}`,
+    success
+  });
+};

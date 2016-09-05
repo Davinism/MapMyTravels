@@ -9,7 +9,7 @@ class RoutesIndex extends React.Component {
 
   render() {
     const routesList = this.props.routes.map( route => {
-      return <RoutesIndexItem key={route.id} route={route} />;
+      return <RoutesIndexItem key={route.id} route={route} requestSingleRoute={this.props.requestSingleRoute} />;
     });
 
     const masonryOptions = { transitionDuration: 0};

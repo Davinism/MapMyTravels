@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
       <div>
         <HomePageHeader />
         <ModuleNavigator path="/dashboard" />
-        <RoutesIndex routes={this.state.routes} />
+        <RoutesIndex routes={this.state.routes} requestSingleRoute={this.props.requestSingleRoute} />
       </div>
     );
   }

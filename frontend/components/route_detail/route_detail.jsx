@@ -1,4 +1,5 @@
 import React from 'react';
+import HomePageHeader from '../home_page_header/home_page_header';
 
 class RouteDetail extends React.Component {
   constructor(props) {
@@ -7,7 +8,12 @@ class RouteDetail extends React.Component {
 
   render() {
     return (
-      <div>Here is the detail!</div>
+      <section className="route-detail">
+        <HomePageHeader />
+        <div className="route-title">
+          {this.props.route.name}
+        </div>
+      </section>
     );
   }
 
