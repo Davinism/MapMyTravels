@@ -231,15 +231,4 @@ class AppMap extends React.Component {
 
 // AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
 
-
-// "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=500x500&maptype=roadmap
-// &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-// &markers=color:red%7Clabel:C%7C40.718217,-73.998284&path=color:green|40.702147,-74.015794|40.711614,-74.012318|40.718217,-73.998284&sensor=false
-// &key=AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0"
-
-// "https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=roadmap
-// &path=color:green|enc:qdneF|ahjVuH^oCLcOn@iSz@]Jm@VG?MBo@\w@j@UXSh@KNOH}AP}ARwDd@oPnByDb@uJjAqJfA{Dh@qOhBqKpA{Dd@qAmS}B{]qEir@eDch@yFu|@o@mK]}EyDd@ZlFF|@qDb@K@g@mH{@kNs@mK~De@jDa@L?@SBIn@{@dEqFlHcK|KaOpAcBp@Sl@[TUNa@Je@Om@O{@CU?MU][i@k@{@yAcB}EmFcK}KmAoAeD}DyEgFsAqAcB{B{ByBqDcEaBeBqEmFeDeDmC_DsAwAiAqA{BeCoCoCwJqKyHcIuN_PmCqCwDgEuFiGaCcCiGeHiAkAcBoBkDeD_CkCuBsCoAyB_BcDgLiViF{Ke@mAq@qBcAmDw@yDg@gDUuBk@kH{AyReBoUcC_[{Cy`@YkE]yGYiHuAc^IwAi@iG}A_P[yC]{DDc@?QWuDYmEu@eJ_AuJe@sFKcBKaB@w@CaCMwKBuAFiAXwBTaA\iA^_ATa@nBmGR{@\iBN_A\eAHWrBoG`DyIrAgDn@iA~@uA~ByC|AkCpEsLxAuDR[jAqCdA{BDORcAp@{EtA_KbBsLkIwBuHqBn@qEd@gD"
-
-// qdneF|ahjVuH^oCLcOn@iSz@]Jm@VG?MBo@\w@j@UXSh@KNOH}AP}ARwDd@oPnByDb@uJjAqJfA{Dh@qOhBqKpA{Dd@qAmS}B{]qEir@eDch@yFu|@o@mK]}EyDd@ZlFBX
-
 export default withRouter(AppMap);

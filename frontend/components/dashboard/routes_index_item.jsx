@@ -1,12 +1,18 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class RoutesIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.router.push(`/route/${this.props.route.id}`);
   }
 
   render() {
-    // debugger;
     let coordsParam = "";
     this.props.route.coordinates.forEach( (coord, index) => {
       coordsParam = coordsParam + "|" + coord;
@@ -17,7 +23,7 @@ class RoutesIndexItem extends React.Component {
     &path=color:red|enc:${this.props.route.polyline}`;
 
     return (
-      <div className="item-container">
+      <div className="item-container" onClick={this.handleClick}>
         <img className="item-static-map" src={staticMapUrl} />
         <p className="item-text">
           {this.props.route.name}<br />{this.props.route.distance.toFixed(2)} mi
@@ -28,7 +34,7 @@ class RoutesIndexItem extends React.Component {
 
 }
 
-export default RoutesIndexItem;
+export default withRouter(RoutesIndexItem);
 
 
 // c`aaCv_ob]hHbLnApBhAnBv@tARVrAs@jBcAv@]d@OfAK~@H~@VlBt@z@Xn@HpA@rJi@d@Cf@Ml@EzCQhBI`@CTGVM|@m@vAaAz@u@bD}CtBoBX]vAsDhCoHL_@VUhAuDdA_Dn@sAfC_FvAoC`B_DZw@f@aBTsAHu@JwCBc@\eCbA}DjBqGnCgJ`A{F~@_GzAwJh@kB^m@d@_@`@ShB[fASl@Sf@UfBuA|EwD~@w@j@u@Z{@Hi@F_A?o@Ec@i@{BOa@BMBGLYFIPOh@GrDk@^Gp@]LMJML]f@_BLi@g@i@kA_BkAeB

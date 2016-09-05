@@ -1,5 +1,6 @@
 import React from 'react';
 import RoutesIndexItem from './routes_index_item';
+import Masonry from 'react-masonry-component';
 
 class RoutesIndex extends React.Component {
   constructor(props) {
@@ -11,15 +12,23 @@ class RoutesIndex extends React.Component {
       return <RoutesIndexItem key={route.id} route={route} />;
     });
 
+    const masonryOptions = { transitionDuration: 0};
+
     return (
       <section className="dashboard">
         <div className="recent-routes-header">
           RECENT ROUTES
         </div>
 
-        <div className="routes-index">
+        <Masonry
+          className="routes-index"
+          elementType={`ul`}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}
+          >
           { routesList }
-        </div>
+        </Masonry>
       </section>
     );
   }
