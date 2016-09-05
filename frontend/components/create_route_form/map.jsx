@@ -203,23 +203,31 @@ class AppMap extends React.Component {
       <section className="map-data-container">
         <div id="map-container" ref="map"></div>
         <div className="route-details">
-          <div className="distance">
-            { this.state.totalDistance }
-          </div>
           <form className="route-form" onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              value={this.state.name}
-              placeholder="Name of route"
-              onChange={this.update("name")} />
-            <textarea
-              value={this.state.description}
-              placeholder="Describe this route!"
-              onChange={this.update("description")}></textarea>
+            <label className="name-label">Route Name: <br />
+              <input
+                type="text"
+                value={this.state.name}
+                placeholder="Name of route"
+                onChange={this.update("name")} />
+            </label>
+
+            <label className="description-label">Description: <br />
+              <textarea
+                value={this.state.description}
+                placeholder="Describe this route!"
+                onChange={this.update("description")}></textarea>
+            </label>
             <button className="create-route-form">
               Create Route
             </button>
           </form>
+          <div className="distance-container">
+          <label className="distance-label">Distance: </label>
+          <div className="distance">
+            <span>{ this.state.totalDistance.toFixed(2) }</span> mi
+          </div>
+        </div>
         </div>
       </section>
     );

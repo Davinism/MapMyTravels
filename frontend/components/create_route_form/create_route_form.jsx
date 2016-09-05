@@ -10,7 +10,7 @@ class CreateRouteForm extends React.Component {
   render() {
     return (
       <div>
-        <HomePageHeader />
+        <div className="border"></div>
         <AppMap
           currentUser={this.props.currentUser}
           createRoute={this.props.createRoute} />
