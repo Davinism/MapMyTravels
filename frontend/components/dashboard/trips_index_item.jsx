@@ -4,6 +4,12 @@ import { withRouter } from 'react-router';
 class TripsIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.router.push(`/trip/${this.props.trip.id}`);
   }
 
   render() {
@@ -13,7 +19,7 @@ class TripsIndexItem extends React.Component {
 
     return (
       <div className="trip-item-container">
-        <section className="trip-static-map">
+        <section className="trip-static-map" onClick={this.handleClick}>
           <img src={staticMapUrl} />
         </section>
 

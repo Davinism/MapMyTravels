@@ -77,6 +77,10 @@ $picture-height: 500px;
       border-radius: 5px;
     }
 
+    .trip-static-map:hover {
+      cursor: pointer;
+    }
+
     .trip-title-distance {
       width: 30%;
       .trip-title {
