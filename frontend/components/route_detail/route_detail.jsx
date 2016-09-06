@@ -32,7 +32,7 @@ class RouteDetail extends React.Component {
           </div>
           <div className="details">
             <p>
-              Created by: {this.props.currentUser.first_name} {this.props.currentUser.last_name}<br />
+              Created by: {route.author_name}<br />
               Description:    {route.description}
             </p>
           </div>

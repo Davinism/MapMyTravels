@@ -92,7 +92,8 @@ Trip.create!(
   author_id: 1,
   route_id: 1,
   start_date: "09/12/2016",
-  end_date: "09/18/2016"
+  end_date: "09/18/2016",
+  expenditure: 708.93
 )
 
 Trip.create!(
@@ -100,5 +101,6 @@ Trip.create!(
   author_id: 1,
   route_id: 2,
   start_date: "12/26/2016",
-  end_date: "12/29/2016"
+  end_date: "12/29/2016",
+  expenditure: 856.72
 )

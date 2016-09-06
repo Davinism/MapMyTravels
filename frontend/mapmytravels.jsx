@@ -5,6 +5,7 @@ import configureStore from './store/store';
 
 import { requestRoutes } from './actions/route_actions';
 import { fetchAllRoutes } from './util/route_api_util';
+import { requestTrips } from './actions/trip_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.Store = store;
   window.requestRoutes = requestRoutes;
+  window.requestTrips = requestTrips;
   window.fetchAllRoutes = fetchAllRoutes;
   window.success = (data) => (console.log(data));
 

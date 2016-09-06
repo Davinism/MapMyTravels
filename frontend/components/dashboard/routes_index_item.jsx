@@ -14,7 +14,6 @@ class RoutesIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.route);
     let coordsParam = "";
     this.props.route.coordinates.forEach( (coord, index) => {
       coordsParam = coordsParam + "|" + coord;

@@ -29,7 +29,8 @@ class Api::TripsController < ApplicationController
       :author_id,
       :route_id,
       :start_date,
-      :end_date
+      :end_date,
+      :expenditure
     )
   end
 end
