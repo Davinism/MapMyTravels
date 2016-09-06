@@ -10,7 +10,7 @@
 #  coordinates :string           default([]), not null, is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  polyline    :string           default(""), not null
+#  polyline    :text             default(""), not null
 #
 
 class Route < ActiveRecord::Base
@@ -20,4 +20,9 @@ class Route < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :User
+
+  has_many :trips,
+    primary_key: :id,
+    foreign_key: :route_id,
+    class_name: :Trip
 end

@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     class_name: :Route
 
+  has_many :trips,
+    through: :routes,
+    source: :trips
+
   attr_reader :password
 
   def self.find_by_credentials(email_address, pw)

@@ -86,3 +86,19 @@ Route.create!(
   ],
   polyline: "if`iHqukMlxA_GrRfd@p|Ah_AhxA_NjwCnUl[{PyMzdB{NdnJaG|rBou@lp@mk@tsBa`A|qM{uA|hBvaAkJb~@qhGpZq}Hxv@c_Bfl@yxEcSibDxf@{|CxhAtl@tzAtt@xrClu@bp@ej@hsBqwBnoAadDnhDm}Ef}GupH`|EavGnuFkgBnbE}r@xhCuT|lBejAhcIcbD|tBek@faDcvCbqD_oCl_BoyGjyFoqKjcJw`L|`FevL~{FgjMzmEkzQvdJ{vPdaI{cKjoJovLd`CkwG~n@azHfbDqqTt`A_wEba@y{Fxm@saJj}@mkC~aD}yAbbBenAvr@ydDlrB{fFviAkvDnrBvInjBipBxnBgkFhlEc|Mf|EahHlcIwt@|tFq_G~yFi|Ffl@qmHoBezG~tFca]jjDqfJ|yKyfQv`DwhKjeE{mF|wEwnAzxBguAx`Ao|F`tFstHtdCe~I|bC{~CvxCmd@p~BlAvhC}vBjGoiCnnBa_CfkCuqAvEuzD~O_iCxcAmdA`zAwbEzqDp_AziKj~EfeKvc@|qDmbA~kHl_@jvDnRzxDupAvuL}zA|sFegA`jBsx@pyAa~B~oAw~@zwAnVtkAcG|aAmrAzsCgi@~hM`yGrrKpfCrsJ`pFjgB|kBlaEvi@zsCon@vyDfZpeIteCdrIfg@`hD`sBhjD~d@j`CfdAx~ClI`qDsbAziEzpBn{Bwc@~hAehE|pBs}F`c@erC{n@_iDzs@ykDpgCarCdmEgpAfgEkY`qB_iAvwAjaFn`CwkB~yCpi@fd@p_By^z`@hc@[nl@}NfSdh@jTxtE`cDkJvjCnDz|BnkAnsIb~EdoGo~E|e@azBlsAox@dnApSxjAdsBdqDfk@|iIra@dwEvdCjbCgMh_Ko`@~yBiu@dgDyxAt|CigA|kCybBja@}aAb}@oGllBes@`_E{VrpCus@`|Bz|AbwBjVfrAnx@ruB_v@rkJcF~aGi|@`qHllAf`FxbArcHpe@bwEttC`sA|}DjhGl`BfyE~@neDwt@rbFp]hzFmi@rzEgkAtwDbmAhgDjzDvuD~QvkJnxEloL{i@~`F_v@vgBjLxsDtxCtiD|nAnkCseBvnAyThy@sbB~lG_gEloCy}A~eC~CniFhuC||Bx@vk@zDz|BfoEhhD|wGpmCjfGzqC~hDt`Gt_Mnf@xdE|`Bv{EzjAxsFn~DpdD`aF|rQ~xEldHfuBzjCaNncEzaBjiCd`AtwCf_@biDjdCjwEndC|fNtpE`rIx~Cx`D|z@xqBaD`yEsLld@"
 )
+
+Trip.create!(
+  title: "First Time Going to Hawaii!",
+  author_id: 1,
+  route_id: 1,
+  start_date: "09/12/2016",
+  end_date: "09/18/2016"
+)
+
+Trip.create!(
+  title: "Northern Lights Trip",
+  author_id: 1,
+  route_id: 2,
+  start_date: "12/26/2016",
+  end_date: "12/29/2016"
+)
