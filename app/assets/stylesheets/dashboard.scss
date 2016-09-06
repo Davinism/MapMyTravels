@@ -53,9 +53,68 @@ $picture-height: 500px;
 
 }
 
-.trip-item-container {
-  .trip-static-map {
-    width: 200px;
-    height: 200px;
+.logged-trips {
+  margin: 0 auto;
+  width: 75%;
+
+  .recent-trips-header {
+    font-family: $main-font;
+    font-size: 28px;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .trip-item-container {
+    display: flex;
+    margin: 2%;
+    justify-content: space-between;
+    font-family: $main-font;
+
+    .trip-static-map {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .trip-title-distance {
+      width: 30%;
+      .trip-title {
+        font-size: 24px;
+        color: $main-theme;
+      }
+      .trip-distance span {
+        font-size: 36px;
+        color: $gray;
+      }
+    }
+
+    .trip-dates {
+      width: 20%;
+      .title {
+        font-size: 24px;
+      }
+      .date {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .expenditure {
+      text-align: center;
+      width: 20%;
+      .title {
+        font-size: 24px;
+      }
+
+      .cost {
+        font-size: 36px;
+        color: $gray;
+
+        span {
+          font-family: arial;
+        }
+      }
+    }
   }
 }
