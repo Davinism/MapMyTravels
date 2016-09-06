@@ -93,7 +93,8 @@ Trip.create!(
   route_id: 1,
   start_date: "09/12/2016",
   end_date: "09/18/2016",
-  expenditure: 708.93
+  expenditure: 708.93,
+  log: "This was an aswesome break from work. Got to snorkle and even rode the acrobatic glider!"
 )
 
 Trip.create!(
@@ -102,5 +103,6 @@ Trip.create!(
   route_id: 2,
   start_date: "12/26/2016",
   end_date: "12/29/2016",
-  expenditure: 856.72
+  expenditure: 856.72,
+  log: "Always wanted to see Aurora Borealis. It was freeing, but well worth it."
 )

@@ -11,10 +11,15 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  expenditure :float            not null
+#  log         :text             default(""), not null
 #
 
 class Trip < ActiveRecord::Base
-  validates :title, :author_id, :route_id, :start_date, :end_date, :expenditure, presence: true
+  validates :title, :author_id, :route_id, :start_date, :end_date,
+  :expenditure, :log, presence: true
+
+  validate :end_date_greater_than_start_date
+  validate :expenditure_greater_than_zero
 
   belongs_to :route,
     primary_key: :id,
@@ -24,4 +29,29 @@ class Trip < ActiveRecord::Base
   has_one :author,
     through: :route,
     source: :author
+
+  def end_date_greater_than_start_date
+    end_date_array = self.end_date.split("/")
+    start_date_array = self.start_date.split("/")
+
+    date_end = Date.strptime(
+      "{#{end_date_array[0]}, #{end_date_array[1]}, #{end_date_array[2]}}",
+      "{%m, %d, %Y}"
+    )
+
+    date_start = Date.strptime(
+      "{#{start_date_array[0]}, #{start_date_array[1]}, #{start_date_array[2]}}",
+      "{%m, %d, %Y}"
+    )
+
+    if date_start >  date_end
+      errors[:start_date] << "can't be greater than the end_date."
+    end
+  end
+
+  def expenditure_greater_than_zero
+    if self.expenditure < 0
+      errors[:expenditure] << "can't be a negative value."
+    end
+  end
 end
