@@ -11,7 +11,8 @@ class LogTripForm extends React.Component {
       routeId: null,
       startDate: "",
       endDate: "",
-      expenditure: 0.00
+      expenditure: 0.00,
+      log: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,11 +21,19 @@ class LogTripForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let startDateArr = this.state.startDate.split("-");
+    const formattedStartDate = [startDateArr[1], startDateArr[2], startDateArr[0]].join("/");
+
+    let endDateArr = this.state.endDate.split("-");
+    const formattedEndDate = [endDateArr[1], endDateArr[2], endDateArr[0]].join("/");
+
     const trip = {
       title: this.state.title,
-      start_date: this.state.startDate,
-      end_date: this.state.endDate,
-      expenditure: parseFloat(this.state.expenditure).toFixed(2)
+      author_id: this.props.currentUser.id,
+      start_date: formattedStartDate,
+      end_date: formattedEndDate,
+      expenditure: parseFloat(this.state.expenditure).toFixed(2),
+      log: this.state.log
     };
 
     this.props.createTrip({trip});
@@ -36,6 +45,7 @@ class LogTripForm extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <HomePageHeader />
@@ -64,11 +74,17 @@ class LogTripForm extends React.Component {
 
           <label className="expenditure">Expenditure: <br />
             <input
-              type="number"
-              min="0"
+              type="text"
               value={this.state.expenditure}
               placeholder="Expenditure"
               onChange={this.update("expenditure")} />
+          </label>
+
+          <label className="trip-log">Trip Log:
+            <textarea
+              value={this.state.log}
+              placeholder="How was this trip?"
+              onChange={this.update("log")}></textarea>
           </label>
 
           <button className="log-trip">
