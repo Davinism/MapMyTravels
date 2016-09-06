@@ -7,7 +7,7 @@ const RoutesReducer = function(state = {}, action) {
       return action.routes;
     case RouteConstants.RECEIVE_SINGLE_ROUTE:
       const newRoute = {[action.route.id]: action.route};
-      return merge({}, newRoute);
+      return merge({}, state, newRoute);
     default:
       return state;
   }

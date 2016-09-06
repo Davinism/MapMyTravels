@@ -1,0 +1,15 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.trip-form {
+  margin: 0 auto;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

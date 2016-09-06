@@ -14,3 +14,11 @@ export const createTrip = (trip, success) => {
     success
   });
 };
+
+export const fetchSingleTrip = (id, success) => {
+  $.ajax({
+    method: "GET",
+    url: `api/trips/${id}`,
+    success
+  });
+};

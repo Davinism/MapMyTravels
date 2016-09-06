@@ -1,6 +1,8 @@
 import {
   TripConstants,
-  receiveTrips
+  receiveTrips,
+  receiveSingleTrip,
+  requestSingleTrip
 } from '../actions/trip_actions';
 
 import * as API from '../util/trip_api_util';
@@ -11,6 +13,9 @@ const TripsMiddleware = ({getState, dispatch}) => next => action => {
       const success = data => dispatch(receiveTrips(data));
       API.fetchAllTrips(success);
       return next(action);
+    case TripConstants.CREATE_TRIP:
+      const createSuccess = data => dispatch(receiveSingleTrip(data));
+      API.createTrip(action.trip, createSuccess);
     default:
       return next(action);
   }
