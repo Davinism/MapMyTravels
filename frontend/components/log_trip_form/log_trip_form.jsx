@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePageHeader from '../home_page_header/home_page_header';
 import { withRouter } from 'react-router';
+import RouteSearch from './route_search';
 
 class LogTripForm extends React.Component {
   constructor(props) {
@@ -12,11 +13,28 @@ class LogTripForm extends React.Component {
       startDate: "",
       endDate: "",
       expenditure: 0.00,
-      log: ""
+      log: "",
+      routes: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.requestRoutes();
+  }
+
+  componentWillReceiveProps(newProps) {
+    const filteredRoutes = [];
+
+    for (let routeId in newProps.routes) {
+      if (newProps.routes[routeId].author_id === this.props.currentUser.id) {
+        filteredRoutes.push(newProps.routes[routeId]);
+      }
+    }
+
+    this.setState({routes: filteredRoutes});
   }
 
   handleSubmit(e) {
@@ -86,6 +104,8 @@ class LogTripForm extends React.Component {
               placeholder="How was this trip?"
               onChange={this.update("log")}></textarea>
           </label>
+
+          <RouteSearch routes={this.props.routes} />
 
           <button className="log-trip">
             Log Trip
