@@ -7,7 +7,7 @@ class RouteSearchItem extends React.Component {
 
   render() {
     return (
-      <div>{this.props.route.name}</div>
+      <div onClick={this.props.handleClick.bind(null, this.props.route.id)}>{this.props.route.name}</div>
     );
   }
 }

@@ -6,8 +6,6 @@ class Api::TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    debugger
-    fail
 
     if @trip.save
       render "api/trips/show"

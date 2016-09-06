@@ -13,6 +13,7 @@ class RouteSearch extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.matches = this.matches.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleInput(event) {
@@ -43,7 +44,7 @@ class RouteSearch extends React.Component {
 
   render() {
     let results = this.matches().map((route, index) => {
-      return <RouteSearchItem key={route.id} route={route} />;
+      return <RouteSearchItem key={route.id} route={route} handleClick={this.props.handleClick}/>;
     });
 
     return (

@@ -19,10 +19,15 @@ class LogTripForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.requestRoutes();
+  }
+
+  handleClick(id) {
+    this.setState({routeId: id});
   }
 
   componentWillReceiveProps(newProps) {
@@ -48,6 +53,7 @@ class LogTripForm extends React.Component {
     const trip = {
       title: this.state.title,
       author_id: this.props.currentUser.id,
+      route_id: this.state.routeId,
       start_date: formattedStartDate,
       end_date: formattedEndDate,
       expenditure: parseFloat(this.state.expenditure).toFixed(2),
@@ -63,7 +69,7 @@ class LogTripForm extends React.Component {
   }
 
   render() {
-
+    console.log(this.state.routeId);
     return (
       <div>
         <HomePageHeader />
@@ -98,14 +104,14 @@ class LogTripForm extends React.Component {
               onChange={this.update("expenditure")} />
           </label>
 
-          <label className="trip-log">Trip Log:
+          <label className="trip-log">Trip Log: <br />
             <textarea
               value={this.state.log}
               placeholder="How was this trip?"
               onChange={this.update("log")}></textarea>
           </label>
 
-          <RouteSearch routes={this.props.routes} />
+          <RouteSearch routes={this.props.routes} handleClick={this.handleClick} />
 
           <button className="log-trip">
             Log Trip
