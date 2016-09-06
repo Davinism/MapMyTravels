@@ -1,0 +1,77 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.route-detail {
+  .route-title {
+    width: 75%;
+    margin: 0.5% auto;
+    font-family: $main-font;
+    font-size: 24px;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .detail-module {
+    width: 75%;
+    margin: 0 auto;
+    font-family: $main-font;
+    display: flex;
+
+    .distance {
+      font-size: 16px;
+      margin: 1% 2%;
+      background: #eee;
+      border: 2px solid #ccc;
+      padding: 3px;
+
+      .distance-text {
+        font-size: 24px;
+      }
+    }
+
+    .details {
+      margin: 1% 2%;
+      width: 30%;
+    }
+
+    .detail-buttons {
+      margin: 1% 2%;
+      display: flex;
+      width: 20%;
+      text-align: center;
+      justify-content: space-around;
+
+      .edit-route-detail {
+        padding: 2px;
+        color: #fff;
+        width: 40%;
+        height: 40%;
+        background: $green;
+        border: 2px solid $main-theme;
+        border-radius: 5px;
+      }
+
+      .delete-route-detail {
+        padding: 2px;
+        color: $main-theme;
+        width: 40%;
+        height: 40%;
+        background: #eee;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  #detail-map-container {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+  }
+}

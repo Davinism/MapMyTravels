@@ -30,6 +30,17 @@ class RouteDetail extends React.Component {
               {route.distance.toFixed(2)}
             </span> mi
           </div>
+          <div className="details">
+            <p>
+              Created by: {this.props.currentUser.first_name} {this.props.currentUser.last_name}<br />
+              Description:    {route.description}
+            </p>
+          </div>
+
+          <div className="detail-buttons">
+            <button className="edit-route-detail">EDIT</button>
+            <button className="delete-route-detail">DELETE</button>
+          </div>
         </section>
         <DetailMap route={route} />
       </section>

@@ -9,6 +9,7 @@
 @import "module.scss";
 @import "dashboard.scss";
 @import "create_route_form.scss";
+@import "route_detail.scss";
 
 $header-font: 'Baloo Paaji', cursive;
 $main-font: 'Catamaran', sans-serif;
@@ -19,12 +20,6 @@ $orange: #EBA74D;
 $picture-height: 500px;
 
 #static-map {
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-}
-
-#detail-map-container {
   width: 500px;
   height: 500px;
   margin: 0 auto;
