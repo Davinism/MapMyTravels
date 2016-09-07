@@ -55,6 +55,7 @@ class RouteSearch extends React.Component {
 
     if (this.state.selected) {
       const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=500x500
+      &key=AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
       &maptype=roadmap
       &sensor=false
       &path=color:red|enc:${this.state.selected.polyline}`;

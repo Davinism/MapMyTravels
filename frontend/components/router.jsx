@@ -10,6 +10,7 @@ import CreateRouteFormContainer from './create_route_form/create_route_form_cont
 import RouteDetailContainer from './route_detail/route_detail_container';
 import LogTripFormContainer from './log_trip_form/log_trip_form_container';
 import TripDetailContainer from './trip_detail/trip_detail_container';
+import FriendsContainer from './friends/friends_container';
 
 import { requestRoutes } from '../actions/route_actions';
 import { requestTrips } from '../actions/trip_actions';
@@ -60,6 +61,7 @@ class AppRouter extends React.Component{
           <Route path="route/:routeId" component={ RouteDetailContainer } onEnter={this._getAllRoutes} />
           <Route path="log_trip" component={ LogTripFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="trip/:tripId" component={ TripDetailContainer } onEnter={this._getAllTrips} />
+          <Route path="/friends" component={ FriendsContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );
