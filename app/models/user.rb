@@ -37,6 +37,24 @@ class User < ActiveRecord::Base
     through: :routes,
     source: :trips
 
+  has_many :friend_taggings,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :FriendTagging
+
+  has_many :friends,
+    through: :friend_taggings,
+    source: :friend
+
+  has_many :follower_taggings,
+    primary_key: :id,
+    foreign_key: :friend_id,
+    class_name: :FriendTagging
+
+  has_many :followers,
+    through: :follower_taggings,
+    source: :user
+
   attr_reader :password
 
   def self.find_by_credentials(email_address, pw)
