@@ -15,6 +15,7 @@ class TripsIndexItem extends React.Component {
   render() {
     const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=500x500
     &maptype=roadmap
+    &sensor=false
     &path=color:red|enc:${this.props.trip.route_polyline}`;
 
     return (

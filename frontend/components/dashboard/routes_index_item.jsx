@@ -21,6 +21,7 @@ class RoutesIndexItem extends React.Component {
 
     const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=500x500
     &maptype=roadmap
+    &sensor=false
     &path=color:red|enc:${this.props.route.polyline}`;
 
     return (
