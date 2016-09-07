@@ -11,7 +11,7 @@ class Api::FriendTaggingsController < ApplicationController
 
   def destroy
     @friend_tagging = FriendTagging.find_by(
-      user_id: params[:friend_tagging][:user_id]
+      user_id: params[:friend_tagging][:user_id],
       friend_id: params[:friend_tagging][:friend_id]
       )
 
