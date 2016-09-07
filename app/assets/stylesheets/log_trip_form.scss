@@ -6,39 +6,192 @@ $green: #9FCA49;
 $orange: #EBA74D;
 $picture-height: 500px;
 
+.log-trip-form-header {
+  width: 75%;
+  margin: 1% auto 0 auto;
+  font-family: $main-font;
+  font-size: 36px;
+  border-bottom: 2px solid #ccc;
+}
+
 .trip-form {
+  position: relative;
   margin: 0 auto;
   width: 75%;
   display: flex;
-  flex-direction: column;
-  text-align: center;
 
   font-family: $main-font;
 
-  label {
-    font-size: 20px;
-    input {
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
-  }
-
-  .trip-log {
-    textarea {
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
-  }
-
-  .route-search-bar {
-    border: 2px solid #ccc;
+  .text-inputs {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 2px solid;
     border-radius: 5px;
+    background: #eee;
+
+    .trip-name {
+      width: 95%;
+      margin: 2% auto;
+      font-size: 20px;
+      input {
+        background: #fff;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 5px;
+        width: 80%;
+      }
+    }
+
+    .trip-dates {
+      margin: 2% auto;
+      width: 95%;
+      display: flex;
+      .start-date {
+        display: inline-block;
+        width: 35%;
+        font-size: 20px;
+        margin-right: 10%;
+        input {
+          background: #fff;
+          padding: 5px;
+          width: 100%;
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+      }
+
+      .end-date {
+        display: inline-block;
+        width: 35%;
+        font-size: 20px;
+        input {
+          background: #fff;
+          padding: 5px;
+          width: 100%;
+          border: 2px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+      }
+    }
+
+
+    .expenditure {
+      margin: 2%;
+      font-size: 20px;
+      span {
+        font-family: arial;
+        margin: 2%;
+      }
+      input {
+        background: #fff;
+        padding: 5px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+    }
+
+    .trip-log {
+      margin: 2%;
+      font-size: 20px;
+      textarea {
+        background: #fff;
+        font-size: 14px;
+        width: 90%;
+        height: 200px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+
+      }
+    }
   }
 
-  .log-trip {
-    margin: 2% auto;
-    background: $orange;
-    border: 2px solid #ccc;
-    width: 10%;
+  .search-input {
+    margin-top: 2%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    .route-search-bar {
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .button-container {
+      margin: 0 auto;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      .log-trip {
+        padding: 5px 10px;
+        font-size: 20px;
+        background: $orange;
+        border: 2px solid #ccc;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+      }
+    }
+
+
+    .search-container {
+      overflow: auto;
+      position: absolute;
+      z-index: 5;
+      top: 4%;
+      right: 10%;
+
+      .search input[type="text"] {
+        // margin: 20px;
+        height: 28px;
+        background: url("http://res.cloudinary.com/dlszpthqv/image/upload/v1473179762/search-icon-dark-grey-md_bgttee.png") no-repeat 10px 10px #eee;
+        border: 2px solid #ccc;
+        font: bold 16px $main-font;
+        color: #eee;
+        width: 100px;
+        padding: 8px 5px 6px 40px;
+
+        border-radius: 20px;
+        /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); */
+        -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+        -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+        -webkit-transition: all 0.7s ease 0s;
+        -moz-transition: all 0.7s ease 0s;
+        -o-transition: all 0.7s ease 0s;
+        transition: all 0.7s ease 0s;
+      }
+
+      .search input[type="text"]:focus {
+        background: url("http://res.cloudinary.com/dlszpthqv/image/upload/v1473179762/search-icon-dark-grey-md_bgttee.png") no-repeat 10px 10px #fcfcfc;
+        color: $gray;
+        width: 350px;
+        border-radius: 20px;
+        // -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+        // -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+        // box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
+        // text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .route-search-item {
+      z-index: 1000;
+      background: #eee;
+      display: flex;
+
+      .route-image {
+        width: 100px;
+        height: 100px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+    }
   }
+
 }

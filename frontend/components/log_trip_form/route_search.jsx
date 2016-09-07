@@ -13,7 +13,8 @@ class RouteSearch extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.matches = this.matches.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickForSearch = this.handleClickForSearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   handleInput(event) {
@@ -36,26 +37,48 @@ class RouteSearch extends React.Component {
     return matches;
   }
 
-  handleClick(route) {
-    return () => {
-      return this.setState({selected: route});
-    };
+  handleClickForSearch(route) {
+    return this.setState({selected: route});
+  }
+
+  clearSearch(e) {
+    e.preventDefault();
+    this.setState({inputVal:"", selected: null});
   }
 
   render() {
     let results = this.matches().map((route, index) => {
-      return <RouteSearchItem key={route.id} route={route} handleClick={this.props.handleClick}/>;
+      return <RouteSearchItem key={route.id} route={route}
+         handleClick={this.props.handleClick}
+         handleClickForSearch={this.handleClickForSearch}/>;
     });
 
-    return (
-      <div>
-        <div className="search-bar">
-          <input className="route-search-bar" onChange={this.handleInput} />
-          <FontAwesome name="search" className="search-icon" />
+    if (this.state.selected) {
+      const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=500x500
+      &maptype=roadmap
+      &path=color:red|enc:${this.state.selected.polyline}`;
+
+      return (
+        <div className="route-search-item">
+          <div className="route-image">
+            <img src={staticMapUrl} />
+          </div>
+          <div className="route-name">
+            {this.state.selected.name}
+          </div>
+          <button onClick={this.clearSearch}>Clear</button>
         </div>
-        {results}
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="search-container">
+          <div className="search" method="get">
+            <input type="text" size="40" placeholder="Find Route" onChange={this.handleInput} />
+          </div>
+          {results}
+        </div>
+      );
+    }
   }
 
 }

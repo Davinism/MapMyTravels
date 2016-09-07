@@ -2,6 +2,7 @@ import React from 'react';
 import HomePageHeader from '../home_page_header/home_page_header';
 import { withRouter } from 'react-router';
 import RouteSearch from './route_search';
+import { DateField, Calendar } from 'react-date-picker';
 
 class LogTripForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class LogTripForm extends React.Component {
       routeId: null,
       startDate: "",
       endDate: "",
-      expenditure: 0.00,
+      expenditure: "",
       log: "",
       routes: {}
     };
@@ -69,53 +70,61 @@ class LogTripForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.routeId);
     return (
       <div>
         <HomePageHeader />
+        <div className="log-trip-form-header">LOG A TRIP</div>
         <form className="trip-form" onSubmit={this.handleSubmit}>
-          <label className="trip-name">Trip Name: <br />
-            <input
-              type="text"
-              value={this.state.title}
-              placeholder="Trip Name"
-              onChange={this.update("title")} />
-          </label>
+          <div className="text-inputs">
+            <label className="trip-name">Trip Name: <br />
+              <input
+                type="text"
+                value={this.state.title}
+                placeholder="Trip Name"
+                onChange={this.update("title")} />
+            </label>
 
-          <label className="start-date">Start Date: <br />
-            <input
-              type="date"
-              value={this.state.startDate}
-              onChange={this.update("startDate")} />
-          </label>
+            <div className="trip-dates">
+              <label className="start-date">Start Date: <br />
+                <input
+                  type="date"
+                  value={this.state.startDate}
+                  onChange={this.update("startDate")} />
+              </label>
 
-          <label className="end-dat">End Date: <br />
-            <input
-              type="date"
-              value={this.state.endDate}
-              onChange={this.update("endDate")} />
-          </label>
+              <label className="end-date">End Date: <br />
+                <input
+                  type="date"
+                  value={this.state.endDate}
+                  onChange={this.update("endDate")} />
+              </label>
+            </div>
 
-          <label className="expenditure">Expenditure: <br />
-            <input
-              type="text"
-              value={this.state.expenditure}
-              placeholder="Expenditure"
-              onChange={this.update("expenditure")} />
-          </label>
+            <label className="expenditure">Expenditure: <br />
+              <span>$</span><input
+                type="text"
+                value={this.state.expenditure}
+                placeholder="0.00"
+                onChange={this.update("expenditure")} />
+            </label>
 
-          <label className="trip-log">Trip Log: <br />
-            <textarea
-              value={this.state.log}
-              placeholder="How was this trip?"
-              onChange={this.update("log")}></textarea>
-          </label>
+            <label className="trip-log">Trip Log: <br />
+              <textarea
+                value={this.state.log}
+                placeholder="How was this trip?"
+                onChange={this.update("log")}></textarea>
+            </label>
+          </div>
 
-          <RouteSearch routes={this.props.routes} handleClick={this.handleClick} />
+          <div className="search-input">
+            <RouteSearch routes={this.props.routes} handleClick={this.handleClick} />
 
-          <button className="log-trip">
-            Log Trip
-          </button>
+            <div className="button-container">
+              <button className="log-trip">
+                Log Trip
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     );
