@@ -235,6 +235,4 @@ class AppMap extends React.Component {
 
 }
 
-// AIzaSyAFS_u1ybrXbWeyMjmmNxBpDAZIVjWFX_0
-
 export default withRouter(AppMap);
