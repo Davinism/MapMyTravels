@@ -1,0 +1,48 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.trip-detail-title {
+  font-family: $main-font;
+  font-size: 36px;
+  width: 75%;
+  margin: 1% auto;
+  border-bottom: 2px solid #ccc;
+}
+
+.trip-info {
+  font-family: $main-font;
+  width: 75%;
+  margin: 1% auto;
+  display: flex;
+  justify-content: center;
+
+  .trip-details {
+    width: 35%;
+    margin: 0 5%;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .trip-route {
+    width: 25%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+}
+
+.comments-and-likes {
+  font-family: $main-font;
+  width: 75%;
+  margin: 1% auto;
+  .comments-and-likes-header {
+    font-size: 24px;
+    border-bottom: 2px solid #ccc;
+  }
+}

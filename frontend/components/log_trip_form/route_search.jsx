@@ -59,14 +59,14 @@ class RouteSearch extends React.Component {
       &path=color:red|enc:${this.state.selected.polyline}`;
 
       return (
-        <div className="route-search-item">
+        <div className="route-search-item-selected">
           <div className="route-image">
             <img src={staticMapUrl} />
           </div>
           <div className="route-name">
-            {this.state.selected.name}
+            {this.state.selected.name}<br /><br />
+            <button onClick={this.clearSearch}>Clear</button>
           </div>
-          <button onClick={this.clearSearch}>Clear</button>
         </div>
       );
     } else {
