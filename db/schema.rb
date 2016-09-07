@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907185820) do
+ActiveRecord::Schema.define(version: 20160907214237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160907185820) do
   end
 
   add_index "friend_taggings", ["friend_id"], name: "index_friend_taggings_on_friend_id", using: :btree
+  add_index "friend_taggings", ["user_id", "friend_id"], name: "index_friend_taggings_on_user_id_and_friend_id", unique: true, using: :btree
   add_index "friend_taggings", ["user_id"], name: "index_friend_taggings_on_user_id", using: :btree
 
   create_table "routes", force: :cascade do |t|

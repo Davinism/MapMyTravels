@@ -7,16 +7,26 @@ $orange: #EBA74D;
 $picture-height: 500px;
 
 .header-group {
-  width: 15%;
+  width: 25%;
+  height: 50px;
   display: flex;
   margin: auto 15% auto 0;
-  justify-content: space-around;;
+  justify-content: flex-end;
   border-radius: 5px;
   font-family: $main-font;
   border: 2px solid $green;
   text-align: center;
 
+  .find-friends-button {
+    display: inline-block;
+    width: 40%;
+    line-height: 50px;
+    color: $gray;
+    margin-right: 4%;
+  }
+
   .profile-picture {
+    margin: 0 4%;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -24,8 +34,8 @@ $picture-height: 500px;
   }
 
   .header-button {
-    padding: 5%;
-    height: 75%;
+    padding: 5px 10px;
+    height: 70%;
     margin: auto 0;
     border-radius: 5px;
     background-color: #eee;

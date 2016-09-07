@@ -106,3 +106,43 @@ Trip.create!(
   expenditure: 856.72,
   log: "Always wanted to see Aurora Borealis. It was freeing, but well worth it."
 )
+
+FriendTagging.create!(
+  user_id: 1,
+  friend_id: 2
+)
+
+FriendTagging.create!(
+  user_id: 1,
+  friend_id: 3
+)
+
+FriendTagging.create!(
+  user_id: 2,
+  friend_id: 1
+)
+
+FriendTagging.create!(
+  user_id: 2,
+  friend_id: 3
+)
+
+FriendTagging.create!(
+  user_id:3,
+  friend_id:1
+)
+
+FriendTagging.create!(
+  user_id:3,
+  friend_id:2
+)
+
+FriendTagging.create!(
+  user_id:3,
+  friend_id:4
+)
+
+FriendTagging.create!(
+  user_id:4,
+  friend_id:3
+)

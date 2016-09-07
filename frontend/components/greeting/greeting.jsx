@@ -46,6 +46,9 @@ class Greeting extends React.Component {
 
     return (
     	<hgroup className="header-group">
+        <Link to="find_friends" className="find-friends-button">
+          <div>Find Friends</div>
+        </Link>
     		<div className="profile-picture" style={{backgroundImage: `url(${this.props.currentUser.profile_picture})`}}>
     		</div>
     		<button className="header-button" onClick={logout}>Log Out</button>
