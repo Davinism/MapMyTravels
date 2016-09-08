@@ -13,5 +13,6 @@
     json.route_polyline trip.route.polyline
     json.route_distance trip.route.distance
     json.log trip.log
+    json.author_profile_picture trip.author.profile_picture
   end
 end

@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 
 import HomePageHeader from '../home_page_header/home_page_header';
 import ModuleNavigator from '../module_navigator/module_navigator';
+import ActivityFeedItem from './activity_feed_item';
 
 class ActivityFeed extends React.Component {
   constructor(props) {
@@ -24,14 +25,14 @@ class ActivityFeed extends React.Component {
 
   render() {
     const feed = this.state.trips.map((trip, index) => {
-      return <li key={index}>{trip.title}</li>;
+      return <ActivityFeedItem key={index} trip={trip} />;
     });
 
     return (
       <div>
         <HomePageHeader />
         <ModuleNavigator path="/feed" />
-        <ul>
+        <ul className="activity-feed">
           {feed}
         </ul>
       </div>

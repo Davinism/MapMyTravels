@@ -1,0 +1,124 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.activity-feed {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .activity-feed-item {
+    display: flex;
+    margin: 2% auto;
+    width: 80%;
+    .item-author-picture {
+      width: 75px;
+      height: 75px;
+      border: 3px solid #ccc;
+      border-radius: 5px;
+      margin-right: 5%;
+      img {
+        height: 100%;
+        width: 75px;
+        object-fit: fill;
+        border-radius: 5px;
+      }
+    }
+
+    .item-trip-info {
+      display: flex;
+      flex-direction: column;
+      font-family: $main-font;
+      width: 100%;
+      padding: 5px 20px;
+
+      .item-trip-title {
+        font-size: 24px;
+        border: 2px solid #ccc;
+        padding: 5px 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+          color: $main-theme;
+        }
+      }
+
+      .item-trip-stats {
+        background: #eee;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 2px solid #ccc;
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+
+        .item-static-map {
+          width: 33%;
+          border-right: 2px solid #ccc;
+        }
+
+        .item-dates {
+          width: 33%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          font-size: 24px;
+          border-right: 2px solid #ccc;
+
+          div {
+            display: flex;
+            justify-content: space-around;
+            .date {
+              color: $main-theme;
+            }
+          }
+        }
+
+        .item-distance-expenditure {
+          width: 33%;
+
+          .distance {
+            margin-top: 2%;
+            margin-left: 5%;
+            margin-bottom: 5%;
+            .value {
+              font-size: 48px;
+            }
+          }
+
+          .expenditure {
+            margin: 0 0 5% 5%;
+            .dollar-sign {
+              font-family: arial;
+            }
+
+            span {
+              font-size: 36px;
+            }
+          }
+        }
+
+      }
+
+      .item-footer {
+        border-bottom: 2px solid #ccc;
+        border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5% 2%;
+
+        .comments-likes {
+          color: $main-theme;
+        }
+      }
+
+    }
+
+  }
+}
