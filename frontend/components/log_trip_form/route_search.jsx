@@ -29,7 +29,7 @@ class RouteSearch extends React.Component {
 
     for (let routeId in this.props.routes) {
       let sub = this.props.routes[routeId].name.slice(0, this.state.inputVal.length);
-      if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
+      if (this.props.routes[routeId].name.toLowerCase().includes(this.state.inputVal.toLowerCase())) {
         matches.push(this.props.routes[routeId]);
       }
     }

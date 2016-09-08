@@ -5,7 +5,7 @@ import configureStore from './store/store';
 
 import { requestRoutes } from './actions/route_actions';
 import { fetchAllRoutes } from './util/route_api_util';
-import { requestTrips } from './actions/trip_actions';
+import { requestTrips, requestFeedTrips } from './actions/trip_actions';
 import { requestFriends } from './actions/friend_actions';
 import { createFriendTagging, destroyFriendTagging } from './actions/friend_tagging_actions';
 import { requestOtherUsers } from './actions/user_actions';
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.Store = store;
   window.requestRoutes = requestRoutes;
   window.requestTrips = requestTrips;
+  window.requestFeedTrips = requestFeedTrips;
   window.requestFriends = requestFriends;
   window.createFriendTagging = createFriendTagging;
   window.destroyFriendTagging = destroyFriendTagging;

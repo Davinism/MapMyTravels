@@ -3,7 +3,9 @@ export const TripConstants = {
   REQUEST_TRIPS: "REQUEST_TRIPS",
   CREATE_TRIP: "CREATE_TRIP",
   RECEIVE_SINGLE_TRIP: "RECEIVE_SINGLE_TRIP",
-  REQUEST_SINGLE_TRIP: "REQUEST_SINGLE_TRIP"
+  REQUEST_SINGLE_TRIP: "REQUEST_SINGLE_TRIP",
+  RECEIVE_FEED_TRIPS: "RECEIVE_FEED_TRIPS",
+  REQUEST_FEED_TRIPS: "REQUEST_FEED_TRIPS"
 };
 
 export const requestTrips = () => ({
@@ -27,5 +29,15 @@ export const receiveSingleTrip = (trip) => ({
 
 export const requestSingleTrip = (id) => ({
   type: TripConstants.REQUEST_SINGLE_TRIP,
+  id
+});
+
+export const receiveFeedTrips = (trips) => ({
+  type: TripConstants.RECEIVE_FEED_TRIPS,
+  trips
+});
+
+export const requestFeedTrips = (id) => ({
+  type: TripConstants.REQUEST_FEED_TRIPS,
   id
 });

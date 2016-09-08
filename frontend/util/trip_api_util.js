@@ -22,3 +22,11 @@ export const fetchSingleTrip = (id, success) => {
     success
   });
 };
+
+export const fetchFeedTrips = (success, id) => {
+  $.ajax({
+    method: "GET",
+    url: `api/${id}/feed_trips`,
+    success
+  });
+};

@@ -26,6 +26,17 @@ class Api::UsersController < ApplicationController
     render "api/users/index"
   end
 
+  def feed_trips
+    @user = User.find_by(id: params[:id])
+    @friends = @user.friends
+    @trips = @user.trips.to_a
+    @friends.to_a.each do |friend|
+      @trips.concat(friend.trips)
+    end
+
+    render "api/users/feed_trips"
+  end
+
   def update
     @user = User.find(params[:id])
   end

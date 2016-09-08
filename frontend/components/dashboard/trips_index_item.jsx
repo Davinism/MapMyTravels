@@ -29,7 +29,7 @@ class TripsIndexItem extends React.Component {
           <div className="trip-title">{this.props.trip.title}</div>
           <div className="trip-distance">
             Distance: <br />
-          <span>{this.props.trip.route_distance.toFixed(2)}</span> mi
+          <span>{parseFloat(this.props.trip.route_distance).toFixed(2)}</span> mi
           </div>
         </section>
 

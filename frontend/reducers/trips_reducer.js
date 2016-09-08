@@ -8,6 +8,8 @@ const TripsReducer = function(state = {}, action) {
     case TripConstants.RECEIVE_SINGLE_TRIP:
       const newTrip = {[action.trip.id]: action.trip};
       return merge({}, state, newTrip);
+    case TripConstants.RECEIVE_FEED_TRIPS:
+      return action.trips;
     default:
       return state;
   }

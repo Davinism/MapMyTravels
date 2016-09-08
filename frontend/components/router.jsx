@@ -17,7 +17,7 @@ import ActivityFeedContainer from './activity_feed/activity_feed_container';
 import ProfileContainer from './profile/profile_container';
 
 import { requestRoutes } from '../actions/route_actions';
-import { requestTrips } from '../actions/trip_actions';
+import { requestTrips, requestFeedTrips } from '../actions/trip_actions';
 import { requestFriends } from '../actions/friend_actions';
 import { requestOtherUsers } from '../actions/user_actions';
 
@@ -30,6 +30,7 @@ class AppRouter extends React.Component{
     this._getAllTrips = this._getAllTrips.bind(this);
     this._getFriends = this._getFriends.bind(this);
     this._getFriendsAndOtherUsers = this._getFriendsAndOtherUsers.bind(this);
+    this._getFriendsAndFeedTrips = this._getFriendsAndFeedTrips.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -75,6 +76,15 @@ class AppRouter extends React.Component{
     this.context.store.dispatch(requestOtherUsers(currentUser.id));
   }
 
+  _getFriendsAndFeedTrips(nextState, replace) {
+    this._ensureLoggedIn(nextState, replace);
+
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+    this.context.store.dispatch(requestFriends(currentUser.id));
+    this.context.store.dispatch(requestFeedTrips(currentUser.id));
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
@@ -89,7 +99,7 @@ class AppRouter extends React.Component{
           <Route path="/friends" component={ FriendsContainer } onEnter={this._getFriends} />
           <Route path="/find_friends" component={ FindFriendsContainer } onEnter={this._getFriendsAndOtherUsers} />
           <Route path="/create_goal" component={ CreateGoalFormContainer } onEnter={this._ensureLoggedIn} />
-          <Route path="/feed" component={ ActivityFeedContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/feed" component={ ActivityFeedContainer } onEnter={this._getFriendsAndFeedTrips} />
           <Route path="/profile" component={ ProfileContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
