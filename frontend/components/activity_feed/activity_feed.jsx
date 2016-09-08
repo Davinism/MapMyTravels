@@ -24,7 +24,17 @@ class ActivityFeed extends React.Component {
   }
 
   render() {
-    const feed = this.state.trips.map((trip, index) => {
+    const dateComparator = (trip1, trip2) => {
+      if (new Date(trip1.created_at) > new Date(trip2.created_at)) {
+        return -1;
+      } else if (new Date(trip1.created_at) === new Date(trip2.created_at)) {
+        return 0;
+      } else {
+        return 1;
+      }
+    };
+
+    const feed = this.state.trips.sort(dateComparator).map((trip, index) => {
       return <ActivityFeedItem key={index} trip={trip} />;
     });
 
