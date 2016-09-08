@@ -55,6 +55,11 @@ class User < ActiveRecord::Base
     through: :follower_taggings,
     source: :user
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Comment
+
   attr_reader :password
 
   def self.find_by_credentials(email_address, pw)

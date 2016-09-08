@@ -41,7 +41,7 @@ class TripsIndexItem extends React.Component {
 
         <section className="expenditure">
           <div className="title">Expenditure</div>
-          <div className="cost"><span>$</span> {this.props.trip.expenditure.toFixed(2)}</div>
+          <div className="cost"><span>$</span> {parseFloat(this.props.trip.expenditure).toFixed(2)}</div>
         </section>
       </div>
     );

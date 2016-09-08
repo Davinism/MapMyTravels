@@ -20,6 +20,7 @@ class Trip < ActiveRecord::Base
 
   validate :end_date_greater_than_start_date
   validate :expenditure_greater_than_zero
+  validate :expenditure_must_be_a_number
 
   belongs_to :route,
     primary_key: :id,
@@ -29,6 +30,11 @@ class Trip < ActiveRecord::Base
   has_one :author,
     through: :route,
     source: :author
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :trip_id,
+    class_name: :Comment
 
   def end_date_greater_than_start_date
     end_date_array = self.end_date.split("/")
@@ -52,6 +58,12 @@ class Trip < ActiveRecord::Base
   def expenditure_greater_than_zero
     if self.expenditure < 0
       errors[:expenditure] << "can't be a negative value."
+    end
+  end
+
+  def expenditure_must_be_a_number
+    if self.expenditure.class != Float && self.expenditure.class != Fixnum
+      errors[:expenditure] << "must be a number."
     end
   end
 end

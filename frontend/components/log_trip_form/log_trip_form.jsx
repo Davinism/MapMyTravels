@@ -51,13 +51,20 @@ class LogTripForm extends React.Component {
     let endDateArr = this.state.endDate.split("-");
     const formattedEndDate = [endDateArr[1], endDateArr[2], endDateArr[0]].join("/");
 
+    let correctedExpenditure;
+    if (this.state.expenditure.substring(0, 1) === "$") {
+      correctedExpenditure = this.state.expenditure.slice(1);
+    } else {
+      correctedExpenditure = this.state.expenditure;
+    }
+
     const trip = {
       title: this.state.title,
       author_id: this.props.currentUser.id,
       route_id: this.state.routeId,
       start_date: formattedStartDate,
       end_date: formattedEndDate,
-      expenditure: parseFloat(this.state.expenditure).toFixed(2),
+      expenditure: parseFloat(correctedExpenditure).toFixed(2),
       log: this.state.log
     };
 
