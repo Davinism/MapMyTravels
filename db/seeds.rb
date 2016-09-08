@@ -159,7 +159,7 @@ Trip.create!(
   end_date: "09/18/2016",
   expenditure: 708.93,
   log: "This was an aswesome break from work. Got to snorkle and even rode the acrobatic glider!"
-)
+).update_attribute(:created_at, Time.now - 86400 * 3)
 
 Trip.create!(
   title: "Northern Lights Trip",
@@ -169,7 +169,7 @@ Trip.create!(
   end_date: "12/29/2016",
   expenditure: 856.72,
   log: "Always wanted to see Aurora Borealis. It was freeing, but well worth it."
-)
+).update_attribute(:created_at, Time.now - 86400)
 
 # Trip.create!(
 #   title: ,
@@ -189,7 +189,7 @@ Trip.create!(
   end_date: "09/04/2016",
   expenditure: 500.24,
   log: "Had an awesome time with BFF's at Huntington Beach and got to spend some time at the Carlsbad flower gardens. Hit up San Diego briefly before heading back."
-)
+).update_attribute(:created_at, Time.now - 40000)
 
 Trip.create!(
   title: "Short Layover at NYC",
@@ -199,7 +199,7 @@ Trip.create!(
   end_date: "09/08/2016",
   expenditure: 724.9,
   log: "Spent some time at Manhattan with my cousin and worked my way down to Brooklyn's famous pizzeria and to Long Island."
-)
+).update_attribute(:created_at, Time.now - 86420)
 
 Trip.create!(
   title: "Vegas Trip with the Kids",
@@ -219,7 +219,7 @@ Trip.create!(
   end_date: "09/05/2016",
   expenditure: 2310.45,
   log: "Italy was beautiful, as expected. One could taste the sunshine in the wine from their wineries, and the gastronomical centers all had service and quality of food on point. I also got to witness Mount Vesuvius with my very own eyes. I would highly recommend this trip to others."
-)
+).update_attribute(:created_at, Time.now - 90000)
 
 # FriendTaggings:
 
