@@ -16,6 +16,7 @@ import FindFriendsContainer from './find_friends/find_friends_container';
 import { requestRoutes } from '../actions/route_actions';
 import { requestTrips } from '../actions/trip_actions';
 import { requestFriends } from '../actions/friend_actions';
+import { requestOtherUsers } from '../actions/user_actions';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -25,6 +26,7 @@ class AppRouter extends React.Component{
     this._getAllRoutes = this._getAllRoutes.bind(this);
     this._getAllTrips = this._getAllTrips.bind(this);
     this._getFriends = this._getFriends.bind(this);
+    this._getFriendsAndOtherUsers = this._getFriendsAndOtherUsers.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -55,10 +57,19 @@ class AppRouter extends React.Component{
 
   _getFriends(nextState, replace) {
     this._ensureLoggedIn(nextState, replace);
-    
+
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
     this.context.store.dispatch(requestFriends(currentUser.id));
+  }
+
+  _getFriendsAndOtherUsers(nextState, replace) {
+    this._ensureLoggedIn(nextState, replace);
+
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+    this.context.store.dispatch(requestFriends(currentUser.id));
+    this.context.store.dispatch(requestOtherUsers(currentUser.id));
   }
 
   render(){
@@ -73,7 +84,7 @@ class AppRouter extends React.Component{
           <Route path="log_trip" component={ LogTripFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="trip/:tripId" component={ TripDetailContainer } onEnter={this._getAllTrips} />
           <Route path="/friends" component={ FriendsContainer } onEnter={this._getFriends} />
-          <Route path="/find_friends" component={ FindFriendsContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/find_friends" component={ FindFriendsContainer } onEnter={this._getFriendsAndOtherUsers} />
         </Route>
       </Router>
     );

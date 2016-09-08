@@ -6,6 +6,7 @@ import RoutesMiddleware from './routes_middleware';
 import TripsMiddleware from './trips_middleware';
 import FriendsMiddleware from './friends_middleware';
 import FriendTaggingsMiddleware from './friend_taggings_middleware';
+import UsersMiddleware from './users_middleware';
 
 const loggerMiddleware = createLogger();
 
@@ -15,7 +16,8 @@ const RootMiddleware = applyMiddleware(
   RoutesMiddleware,
   TripsMiddleware,
   FriendsMiddleware,
-  FriendTaggingsMiddleware
+  FriendTaggingsMiddleware,
+  UsersMiddleware
 );
 
 export default RootMiddleware;

@@ -8,6 +8,7 @@ import { fetchAllRoutes } from './util/route_api_util';
 import { requestTrips } from './actions/trip_actions';
 import { requestFriends } from './actions/friend_actions';
 import { createFriendTagging, destroyFriendTagging } from './actions/friend_tagging_actions';
+import { requestOtherUsers } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.requestFriends = requestFriends;
   window.createFriendTagging = createFriendTagging;
   window.destroyFriendTagging = destroyFriendTagging;
+  window.requestOtherUsers = requestOtherUsers;
   window.fetchAllRoutes = fetchAllRoutes;
   window.success = (data) => (console.log(data));
 

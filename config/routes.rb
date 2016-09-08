@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/api/:id/friends/', :to => 'api/users#friends'
+  get 'api/:id/other_users', :to => 'api/users#other_users'
 
   root "static_pages#root"
 end

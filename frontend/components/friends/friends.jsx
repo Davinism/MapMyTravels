@@ -13,7 +13,7 @@ class Friends extends React.Component {
   render() {
     const friendsList = [];
 
-    const masonryOptions = { transitionDuration: 0};
+    const masonryOptions = { transitionDuration: 0 };
 
     for (let friendId in this.props.friends) {
       friendsList.push(<FriendItem key={friendId}

@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: params[:id])
+    @users = User.all
     render "api/users/index"
   end
 
@@ -19,6 +19,11 @@ class Api::UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @friends = @user.friends
     render "api/users/friends"
+  end
+
+  def other_users
+    @users = User.where.not(id: params[:id])
+    render "api/users/index"
   end
 
   def update
