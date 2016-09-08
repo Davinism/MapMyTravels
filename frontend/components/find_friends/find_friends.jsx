@@ -33,7 +33,12 @@ class FindFriends extends React.Component {
     return (
       <div>
         <HomePageHeader />
-        <div className="find-friends-page-title">Find Friends</div>
+        <div className="find-friends-page-title">
+          <div>Find Friends</div>
+          <div className="search" method="get">
+            <input type="text" size="40" placeholder="Type Name"/>  
+          </div>
+        </div>
         <div>
           <ul className="users-gallery">
             {usersList}
