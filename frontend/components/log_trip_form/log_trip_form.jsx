@@ -117,7 +117,7 @@ class LogTripForm extends React.Component {
           </div>
 
           <div className="search-input">
-            <RouteSearch routes={this.props.routes} handleClick={this.handleClick} />
+            <RouteSearch routes={this.state.routes} handleClick={this.handleClick} />
 
             <div className="button-container">
               <button className="log-trip">

@@ -15,6 +15,7 @@ import FindFriendsContainer from './find_friends/find_friends_container';
 
 import { requestRoutes } from '../actions/route_actions';
 import { requestTrips } from '../actions/trip_actions';
+import { requestFriends } from '../actions/friend_actions';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -23,6 +24,7 @@ class AppRouter extends React.Component{
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._getAllRoutes = this._getAllRoutes.bind(this);
     this._getAllTrips = this._getAllTrips.bind(this);
+    this._getFriends = this._getFriends.bind(this);
   }
 
   _ensureLoggedIn(nextState, replace){
@@ -51,6 +53,14 @@ class AppRouter extends React.Component{
     this.context.store.dispatch(requestTrips());
   }
 
+  _getFriends(nextState, replace) {
+    this._ensureLoggedIn(nextState, replace);
+    
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+    this.context.store.dispatch(requestFriends(currentUser.id));
+  }
+
   render(){
     return(
       <Router history={ hashHistory }>
@@ -62,7 +72,7 @@ class AppRouter extends React.Component{
           <Route path="route/:routeId" component={ RouteDetailContainer } onEnter={this._getAllRoutes} />
           <Route path="log_trip" component={ LogTripFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="trip/:tripId" component={ TripDetailContainer } onEnter={this._getAllTrips} />
-          <Route path="/friends" component={ FriendsContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/friends" component={ FriendsContainer } onEnter={this._getFriends} />
           <Route path="/find_friends" component={ FindFriendsContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>

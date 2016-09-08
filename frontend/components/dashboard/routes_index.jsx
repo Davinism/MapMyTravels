@@ -12,7 +12,7 @@ class RoutesIndex extends React.Component {
       return <RoutesIndexItem key={route.id} route={route} requestSingleRoute={this.props.requestSingleRoute} />;
     });
 
-    const masonryOptions = { transitionDuration: 0};
+    const masonryOptions = { transitionDuration: 1};
 
     return (
       <section className="dashboard">

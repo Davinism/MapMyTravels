@@ -1,0 +1,75 @@
+$header-font: 'Baloo Paaji', cursive;
+$main-font: 'Catamaran', sans-serif;
+$main-theme: #4891C0;
+$gray: #6D717A;
+$green: #9FCA49;
+$orange: #EBA74D;
+$picture-height: 500px;
+
+.friends-page-title {
+  font-family: $main-font;
+  font-size: 36px;
+  border-bottom: 2px solid #ccc;
+  width: 75%;
+  margin: 1% auto;
+}
+
+.friends-gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 75%;
+  height: 200px;
+  margin: 0 auto;
+
+  .friend-item {
+    width: 40%;
+    display: flex;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 2% 2% 2% 2%;
+
+    .profile-picture {
+      width: 200px;
+      height: 200px;
+      border-right: 2px solid #ccc;
+      img {
+        height: 100%;
+        width: 200px;
+        object-fit: fill;
+      }
+
+    }
+
+    .name-and-follow {
+      width: 50%;
+      font-family: $main-font;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+
+      .name {
+        font-size: 24px;
+        color: $gray;
+      }
+
+      .follow-unfollow-button {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 20px;
+        padding: 2%;
+        background-color: #ccc;
+        border-radius: 5px;
+        margin-left: 10%;
+        margin-bottom: 5%;
+
+        button {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+}

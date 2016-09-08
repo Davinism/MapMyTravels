@@ -10,6 +10,17 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.where.not(id: params[:id])
+    render "api/users/index"
+  end
+
+  def friends
+    @user = User.find_by(id: params[:id])
+    @friends = @user.friends
+    render "api/users/friends"
+  end
+
   def update
     @user = User.find(params[:id])
   end

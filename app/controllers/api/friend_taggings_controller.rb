@@ -1,9 +1,12 @@
 class Api::FriendTaggingsController < ApplicationController
   def create
-    @friend_tagging = FriendTagging.new(friend_tagging_params)
+    @friend_tagging = FriendTagging.new(
+      user_id: params[:user_id],
+      friend_id: params[:friend_id]
+      )
 
     if @friend_tagging.save
-      render "api/friend_taggings/show"
+      render json: params[:user_id]
     else
       render json: @friend_tagging.errors.full_messages, status: 422
     end
@@ -11,12 +14,12 @@ class Api::FriendTaggingsController < ApplicationController
 
   def destroy
     @friend_tagging = FriendTagging.find_by(
-      user_id: params[:friend_tagging][:user_id],
-      friend_id: params[:friend_tagging][:friend_id]
+      user_id: params[:user_id],
+      friend_id: params[:friend_id]
       )
 
     if @friend_tagging.destroy
-      render "api/friend_taggings/show"
+      render json: params[:user_id]
     else
       render json: "Cannot destroy this friend tagging."
     end
