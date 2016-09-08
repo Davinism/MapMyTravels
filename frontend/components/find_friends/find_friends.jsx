@@ -32,25 +32,8 @@ class FindFriends extends React.Component {
   }
 
   render() {
-    // const usersList = [];
     const masonryOptions = { transitionDuration: 0 };
     let friendStatus;
-
-    // for (let userId in this.props.users) {
-    //   if (this.props.friends.hasOwnProperty(userId)) {
-    //     friendStatus = "Following";
-    //   } else {
-    //     friendStatus = "Not Following";
-    //   }
-    //
-    //   usersList.push(<UserItem key={userId}
-    //     user={this.props.users[userId]}
-    //     currentUser={this.props.currentUser}
-    //     destroyFriendTagging={this.props.destroyFriendTagging}
-    //     createFriendTagging={this.props.createFriendTagging}
-    //     friendStatus={friendStatus} />
-    //   );
-    // }
 
     let results = this.matches().map((user, index) => {
       if (this.props.friends.hasOwnProperty(user.id)) {

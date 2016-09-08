@@ -12,6 +12,9 @@ import LogTripFormContainer from './log_trip_form/log_trip_form_container';
 import TripDetailContainer from './trip_detail/trip_detail_container';
 import FriendsContainer from './friends/friends_container';
 import FindFriendsContainer from './find_friends/find_friends_container';
+import CreateGoalFormContainer from './create_goal/create_goal_container';
+import ActivityFeedContainer from './activity_feed/activity_feed_container';
+import ProfileContainer from './profile/profile_container';
 
 import { requestRoutes } from '../actions/route_actions';
 import { requestTrips } from '../actions/trip_actions';
@@ -85,6 +88,9 @@ class AppRouter extends React.Component{
           <Route path="trip/:tripId" component={ TripDetailContainer } onEnter={this._getAllTrips} />
           <Route path="/friends" component={ FriendsContainer } onEnter={this._getFriends} />
           <Route path="/find_friends" component={ FindFriendsContainer } onEnter={this._getFriendsAndOtherUsers} />
+          <Route path="/create_goal" component={ CreateGoalFormContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/feed" component={ ActivityFeedContainer } onEnter={this._ensureLoggedIn} />
+          <Route path="/profile" component={ ProfileContainer } onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );
