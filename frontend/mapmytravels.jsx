@@ -9,6 +9,7 @@ import { requestTrips, requestFeedTrips } from './actions/trip_actions';
 import { requestFriends } from './actions/friend_actions';
 import { createFriendTagging, destroyFriendTagging } from './actions/friend_tagging_actions';
 import { requestOtherUsers } from './actions/user_actions';
+import { createComment } from './actions/comment_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.destroyFriendTagging = destroyFriendTagging;
   window.requestOtherUsers = requestOtherUsers;
   window.fetchAllRoutes = fetchAllRoutes;
+  window.createComment = createComment;
   window.success = (data) => (console.log(data));
 
   const root = document.getElementById("root");

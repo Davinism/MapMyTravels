@@ -5,6 +5,7 @@ import TripsReducer from './trips_reducer';
 import FriendsReducer from './friends_reducer';
 import FriendTaggingsReducer from './friend_taggings_reducer';
 import UsersReducer from './users_reducer';
+import CommentsReducer from './comments_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,

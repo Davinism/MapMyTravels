@@ -14,5 +14,9 @@
     json.route_distance trip.route.distance
     json.log trip.log
     json.author_profile_picture trip.author.profile_picture
+    json.comments_count trip.comments.length
+    json.comments do
+      json.partial! 'api/comments/comment', collection: trip.comments, as: :comment
+    end
   end
 end

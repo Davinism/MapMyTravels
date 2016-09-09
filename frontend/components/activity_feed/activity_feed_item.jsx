@@ -1,6 +1,8 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
+import CommentsList from './comments_list';
+
 class ActivityFeedItem extends React.Component {
   constructor(props) {
     super(props);
@@ -55,14 +57,16 @@ class ActivityFeedItem extends React.Component {
 
           <section className="item-footer">
             <span className="comments-likes">
-              <FontAwesome name="comment" />
+              <FontAwesome name="comment" /> {this.props.trip.comments_count}
             </span>
             <span className="date-created">
               {(new Date(this.props.trip.created_at)).toString()}
             </span>
           </section>
 
+          <CommentsList comments={this.props.trip.comments} />
         </div>
+
       </li>
     );
   }
