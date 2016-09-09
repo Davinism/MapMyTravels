@@ -60,3 +60,15 @@ The dashboard keeps track of all the user's trips.
 MapMyTravels is also a social application, where users can choose to follow/friend other users and share trips with each other on their respective activity feeds. A commenting feature has also been included that allows users to interact with each other even further.
 
 ![Image of Activity Feed](docs/wireframes/activity_feed.png)
+
+## Future Directions for the Project
+
+In addition to the features already implemented, I plan to continue work on this project. The next steps for MapMyTravels are outlined below.
+
+### Photo Album
+
+Sharing trips with each other can be further encouraged by allowing users to post photos from their trips and sharing them with their friends.
+
+### Calendar
+
+A calendar on the dashboard that marks the dates that the user travelled will give a more visual representation of the user's travelling history.
