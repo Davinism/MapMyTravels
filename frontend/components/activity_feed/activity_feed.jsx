@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import HomePageHeader from '../home_page_header/home_page_header';
 import ModuleNavigator from '../module_navigator/module_navigator';
 import ActivityFeedItem from './activity_feed_item';
+import SiteFooter from '../site_footer/site_footer';
 
 class ActivityFeed extends React.Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class ActivityFeed extends React.Component {
         <ul className="activity-feed">
           {feed}
         </ul>
+        <SiteFooter />
       </div>
     );
   }

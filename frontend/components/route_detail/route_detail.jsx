@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePageHeader from '../home_page_header/home_page_header';
 import DetailMap from './detail_map';
+import SiteFooter from '../site_footer/site_footer';
 
 class RouteDetail extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class RouteDetail extends React.Component {
           </div>
         </section>
         <DetailMap route={route} />
+        <SiteFooter />
       </section>
     );
   }

@@ -3,6 +3,7 @@ import HomePageHeader from '../home_page_header/home_page_header';
 import RoutesIndex from './routes_index';
 import ModuleNavigator from '../module_navigator/module_navigator';
 import TripsIndex from './trips_index';
+import SiteFooter from '../site_footer/site_footer';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class Dashboard extends React.Component {
         <ModuleNavigator path="/dashboard" />
         <TripsIndex trips={this.state.trips} />
         <RoutesIndex routes={this.state.routes} requestSingleRoute={this.props.requestSingleRoute} />
+        <SiteFooter />
       </div>
     );
   }

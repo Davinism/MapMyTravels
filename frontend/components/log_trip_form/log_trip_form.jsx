@@ -3,6 +3,7 @@ import HomePageHeader from '../home_page_header/home_page_header';
 import { withRouter } from 'react-router';
 import RouteSearch from './route_search';
 import { DateField, Calendar } from 'react-date-picker';
+import SiteFooter from '../site_footer/site_footer';
 
 class LogTripForm extends React.Component {
   constructor(props) {
@@ -133,6 +134,7 @@ class LogTripForm extends React.Component {
             </div>
           </div>
         </form>
+        <SiteFooter />
       </div>
     );
   }

@@ -15,6 +15,7 @@ import FindFriendsContainer from './find_friends/find_friends_container';
 import CreateGoalFormContainer from './create_goal/create_goal_container';
 import ActivityFeedContainer from './activity_feed/activity_feed_container';
 import ProfileContainer from './profile/profile_container';
+import SiteFooter from './site_footer/site_footer';
 
 import { requestRoutes } from '../actions/route_actions';
 import { requestTrips, requestFeedTrips } from '../actions/trip_actions';

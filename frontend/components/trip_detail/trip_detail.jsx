@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import HomePageHeader from '../home_page_header/home_page_header';
+import SiteFooter from '../site_footer/site_footer';
 
 class TripDetail extends React.Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class TripDetail extends React.Component {
         <section className="comments-and-likes">
           <div className="comments-and-likes-header">Comments</div>
         </section>
+        <SiteFooter />
       </section>
     );
   }

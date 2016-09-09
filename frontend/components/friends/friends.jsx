@@ -4,6 +4,7 @@ import Masonry from 'react-masonry-component';
 import HomePageHeader from '../home_page_header/home_page_header';
 import ModuleNavigator from '../module_navigator/module_navigator';
 import FriendItem from './friend_item';
+import SiteFooter from '../site_footer/site_footer';
 
 class Friends extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Friends extends React.Component {
             {friendsList}
           </ul>
         </div>
+        <SiteFooter />
       </div>
     );
   }

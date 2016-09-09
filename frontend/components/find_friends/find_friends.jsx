@@ -3,6 +3,7 @@ import Masonry from 'react-masonry-component';
 
 import HomePageHeader from '../home_page_header/home_page_header';
 import UserItem from './user_item';
+import SiteFooter from '../site_footer/site_footer';
 
 class FindFriends extends React.Component {
   constructor(props) {

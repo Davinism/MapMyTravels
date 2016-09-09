@@ -4,6 +4,7 @@ import LogInForm from './log_in_form';
 import SignUpForm from './sign_up_form';
 import Footer from '../footer/footer';
 import WelcomeText from './welcome_text';
+import SiteFooter from '../site_footer/site_footer';
 
 class SessionForm extends React.Component {
 	constructor(props){
@@ -105,6 +106,7 @@ class SessionForm extends React.Component {
 					</section>
 				</div>
 				<Footer />
+				<SiteFooter />
 		</section>
 		);
 	}
