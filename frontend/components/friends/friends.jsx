@@ -35,7 +35,6 @@ class Friends extends React.Component {
             {friendsList}
           </ul>
         </div>
-        <SiteFooter />
       </div>
     );
   }

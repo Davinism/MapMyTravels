@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
 			images: [
 				"http://res.cloudinary.com/davinkim93/image/upload/v1472667556/flying_in_a_plane_i2mn5s.jpg",
 				"http://res.cloudinary.com/davinkim93/image/upload/v1472667530/grand_canyon_m4fvfz.jpg",
-				"http://res.cloudinary.com/davinkim93/image/upload/v1472667632/chicago_ktwio6.jpg",
+				"http://res.cloudinary.com/davinkim93/image/upload/c_scale,w_3000/v1472667632/chicago_ktwio6.jpg",
 				"http://res.cloudinary.com/davinkim93/image/upload/v1472667493/aurora_evckmi.jpg"
 			],
 			currentImageIdx: 0
