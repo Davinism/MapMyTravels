@@ -18,6 +18,8 @@ Maps rendering and path rendering was implemented using the Google Maps API.
 
 ![Image of Saved Routes](docs/wireframes/saved_routes.png)
 
+Map images were rendered using the coordinates that were saved on the backend as well as the Google Static Maps API.
+
 ### Single-Page App
 
 MapMyTravels is a single-page application, with all the routers set up to render different React components upon different requests. The root static page keeps track of authentication and only allows users to have access to the core functionalities of the application upon valid sign-up/log-in.
@@ -40,3 +42,21 @@ MapMyTravels is a single-page application, with all the routers set up to render
   </Route>
 </Router>
 ```
+
+### Dashboard
+
+MapMyTravels also keeps track of trips that the users have gone on and logged. It includes statistics such as dates travelled and expenditure. This allows the user to have a running history of places they've been to and keep track of certain statistics during their trips.
+
+![Image of Logging Trips](docs/wireframes/logging_trip.png)
+
+Users can log trips using routes that they created earlier.
+
+![Image of the Dashboard](docs/wireframes/dashboard.png)
+
+The dashboard keeps track of all the user's trips.
+
+# Social Media
+
+MapMyTravels is also a social application, where users can choose to follow/friend other users and share trips with each other on their respective activity feeds. A commenting feature has also been included that allows users to interact with each other even further.
+
+![Image of Activity Feed](docs/wireframes/activity_feed.png)
