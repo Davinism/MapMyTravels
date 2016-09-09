@@ -21,6 +21,7 @@ class AppMap extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.navigateToDashboard = this.navigateToDashboard.bind(this);
+    this.clearPoints = this.clearPoints.bind(this);
   }
 
   componentDidMount() {
@@ -192,6 +193,18 @@ class AppMap extends React.Component {
     this.props.router.push("/dashboard");
   }
 
+  clearPoints(event) {
+    event.preventDefault();
+
+    this.waypts = [];
+    this.ways = [];
+    this.prev = null;
+    this.current = null;
+
+    this.setState({totalDistance: 0, coords: []});
+    this.initialize();
+  }
+
   render() {
 
     let coordsParam = "";
@@ -218,9 +231,14 @@ class AppMap extends React.Component {
                 placeholder="Describe this route!"
                 onChange={this.update("description")}></textarea>
             </label>
-            <button className="create-route-form">
-              Create Route
-            </button>
+            <div>
+              <button className="create-route-form">
+                Create Route
+              </button>
+              <button className="clear-points" onClick={this.clearPoints}>
+                Clear Points
+              </button>
+            </div>
           </form>
           <div className="distance-container">
           <label className="distance-label">Distance: </label>

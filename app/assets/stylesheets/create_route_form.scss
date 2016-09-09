@@ -79,6 +79,21 @@ $picture-height: 500px;
         margin-bottom: 5%;
       }
 
+      .clear-points {
+        margin: 0 0 0 5%;
+        text-align: center;
+        display: inline-block;
+        width: 40%;
+        font-family: $main-font;
+        font-size: 20px;
+        background: $gray;
+        color: #fff;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        padding: 5px;
+        margin-bottom: 5%;
+      }
+
     }
 
     .distance-label {
