@@ -2,6 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
 import CommentsList from './comments_list';
+import CommentFormContainer from './comment_form_container';
 
 class ActivityFeedItem extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class ActivityFeedItem extends React.Component {
       <li className="activity-feed-item">
         <div className="item-author-picture">
           <img src={this.props.trip.author_profile_picture} />
+          <div>{this.props.trip.author_name}</div>
         </div>
         <div className="item-trip-info">
           <section className="item-trip-title">
@@ -65,6 +67,7 @@ class ActivityFeedItem extends React.Component {
           </section>
 
           <CommentsList comments={this.props.trip.comments} />
+          <CommentFormContainer trip={this.props.trip} />
         </div>
 
       </li>
