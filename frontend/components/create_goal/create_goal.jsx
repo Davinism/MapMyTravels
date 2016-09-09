@@ -10,7 +10,7 @@ class CreateGoal extends React.Component {
     return (
       <div>
         <HomePageHeader />
-        <div>Coming Soon!</div>
+        <div className="create-goal">Coming Soon!</div>
       </div>
     );
   }
