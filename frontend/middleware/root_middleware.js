@@ -13,7 +13,6 @@ const loggerMiddleware = createLogger();
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
-  loggerMiddleware,
   RoutesMiddleware,
   TripsMiddleware,
   FriendsMiddleware,

@@ -20,18 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.Store = store;
-  window.requestRoutes = requestRoutes;
-  window.requestTrips = requestTrips;
-  window.requestFeedTrips = requestFeedTrips;
-  window.requestFriends = requestFriends;
-  window.createFriendTagging = createFriendTagging;
-  window.destroyFriendTagging = destroyFriendTagging;
-  window.requestOtherUsers = requestOtherUsers;
-  window.fetchAllRoutes = fetchAllRoutes;
-  window.createComment = createComment;
-  window.success = (data) => (console.log(data));
-
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
 });
