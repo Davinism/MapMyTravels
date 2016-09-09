@@ -53,6 +53,7 @@ $picture-height: 500px;
         background: $green;
         border: 2px solid $main-theme;
         border-radius: 5px;
+        display: none;
       }
 
       .delete-route-detail {
@@ -63,6 +64,7 @@ $picture-height: 500px;
         background: #eee;
         border: 2px solid #ccc;
         border-radius: 5px;
+        display: none;
       }
     }
   }
