@@ -12,4 +12,4 @@ MapMyTravels is a full-stack web application inspired by MapMyRun. It utilizes R
 
 MapMyTravels uses Google Maps API to create traveling routes and connecting multiple coordinates that the user creates through clicking on the map. The map can then be saved via Google Static Maps API, and with all the coordinates that are stored on PostgreSQL, users can access their created route upon request.
 
-![Image of Route Creation][docs/wireframes/route_creation.png]
+![Image of Route Creation](docs/wireframes/route_creation.png)
