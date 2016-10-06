@@ -90,9 +90,10 @@ class AppRouter extends React.Component{
     return(
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
+          <IndexRoute component={ DashboardContainer } />
+          <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
-          <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/create_route" component={ CreateRouteFormContainer } onEnter={this._ensureLoggedIn} />
           <Route path="route/:routeId" component={ RouteDetailContainer } onEnter={this._getAllRoutes} />
           <Route path="log_trip" component={ LogTripFormContainer } onEnter={this._ensureLoggedIn} />
