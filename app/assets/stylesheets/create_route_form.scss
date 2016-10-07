@@ -24,6 +24,25 @@ $picture-height: 500px;
     margin: 0 auto;
   }
 
+  #map-container-span {
+    display: none;
+  }
+
+  #map-container:hover {
+    cursor: pointer;
+  }
+
+  #map-container:hover ~ #map-container-span {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    font-family: $main-font;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+
   .route-details {
     width: 25%;
     border-right: 3px solid #ccc;

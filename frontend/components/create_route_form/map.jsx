@@ -22,6 +22,8 @@ class AppMap extends React.Component {
     this.update = this.update.bind(this);
     this.navigateToDashboard = this.navigateToDashboard.bind(this);
     this.clearPoints = this.clearPoints.bind(this);
+
+    this._destroyDirections = this._destroyDirections.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +33,16 @@ class AppMap extends React.Component {
     this.current = null;
 
     this.initialize();
+
+    let $directions = document.getElementById('map-container-span');
+
+    window.onmousemove = (event) => {
+      let x = event.clientX;
+      let y = event.clientY;
+
+      $directions.style.top = (y + 20) + 'px';
+      $directions.style.left = (x + 20) + 'px';
+    };
   }
 
   placeMarker(position, map) {
@@ -205,6 +217,11 @@ class AppMap extends React.Component {
     this.initialize();
   }
 
+  _destroyDirections(event) {
+    const $directions = document.getElementById("map-container-span");
+    $directions.remove();
+  }
+
   render() {
 
     let coordsParam = "";
@@ -214,7 +231,10 @@ class AppMap extends React.Component {
 
     return (
       <section className="map-data-container">
-        <div id="map-container" ref="map"></div>
+        <div id="map-container" ref="map" onClick={this._destroyDirections}>
+
+        </div>
+        <span id="map-container-span">Click to start <br /> mapping a route.</span>
         <div className="route-details">
           <form className="route-form" onSubmit={this.handleSubmit}>
             <label className="name-label">Route Name: <br />

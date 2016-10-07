@@ -13,7 +13,7 @@ class SiteFooter extends React.Component {
         </section>
         <section className="my-info">
           <div>
-            <a href="https://github.com/Davinism/MapMyTravels">Github</a>
+            <a target="_blank" href="https://github.com/Davinism/MapMyTravels">Github</a>
           </div>
 
           <div>
