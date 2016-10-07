@@ -28,6 +28,10 @@ $picture-height: 500px;
     display: none;
   }
 
+  #map-container-span-unrender {
+    display: none;
+  }
+
   #map-container:hover {
     cursor: pointer;
   }

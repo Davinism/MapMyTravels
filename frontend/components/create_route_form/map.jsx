@@ -229,12 +229,17 @@ class AppMap extends React.Component {
       coordsParam = coordsParam + "|" + coord;
     });
 
+    let mapDirections;
+    if (this.state.coords.length === 0) {
+      mapDirections = <span id="map-container-span">Click to start <br /> mapping a route.</span>;
+    } else {
+      mapDirections = <span id="map-container-span-unrender">Click to start <br /> mapping a route.</span>;
+    }
+
     return (
       <section className="map-data-container">
-        <div id="map-container" ref="map" onClick={this._destroyDirections}>
-
-        </div>
-        <span id="map-container-span">Click to start <br /> mapping a route.</span>
+        <div id="map-container" ref="map"></div>
+        {mapDirections}
         <div className="route-details">
           <form className="route-form" onSubmit={this.handleSubmit}>
             <label className="name-label">Route Name: <br />
