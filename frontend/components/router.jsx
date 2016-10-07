@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, IndexRedirect } from 'react-router';
 
 import App from './App';
 import SessionFormContainer from './session_form/session_form_container';
@@ -90,6 +90,7 @@ class AppRouter extends React.Component{
     return(
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
+          <IndexRedirect to="/dashboard" />
           <Route path="/dashboard" component={ DashboardContainer } onEnter={this._ensureLoggedIn} />
           <Route path="/login" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
           <Route path="/signup" component={ SessionFormContainer } onEnter={this._redirectIfLoggedIn}/>
